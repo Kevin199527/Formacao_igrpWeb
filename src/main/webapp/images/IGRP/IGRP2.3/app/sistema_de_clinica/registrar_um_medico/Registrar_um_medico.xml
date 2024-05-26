@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/Formacao_igrpWeb/images/IGRP/IGRP2.3/app/sistema_de_clinica/registrar_um_medico/Registrar_um_medico.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/Formacao_igrpWeb/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Registrar_um_medico</page>
+    <app>sistema_de_clinica</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_clinica.pages</package_db>
+        <package_html>Registrar_um_medico</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=94</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Registrar Medico</title>
+        <form_1 type="form" xml-type="form" title="Registrar Medico" gen-type="container" gen-group="">
+            <fields>
+                <foto name="p_foto" type="img" persist="true" img="../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg" width="" height="" croppie="true" rounded="false" autoupload="true" maxlength="250" placeholder="Introduzir Foto do medico " desclabel="false" right="false" tooltip="false" disable_copy_paste="false">
+                    <label>Foto</label>
+                    <value>../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</value>
+                </foto>
+                <nome name="p_nome" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="Nome do medico" desclabel="false" inputmask="" right="false" tooltip="false" disable_copy_paste="false">
+                    <label>Nome</label>
+                    <value>Voluptatem ipsum natus voluptatem perspiciatis</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </nome>
+                <numero_da_ordem_dos_medicos name="p_numero_da_ordem_dos_medicos" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="O número de registro do médico junto ao órgão regulador." desclabel="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
+                    <label>Número da Ordem dos Médicos</label>
+                    <value>237</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </numero_da_ordem_dos_medicos>
+                <telefones name="p_telefones" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="Telefone" desclabel="false" inputmask="" right="false" tooltip="false" disable_copy_paste="false">
+                    <label>Telefones</label>
+                    <value>Sed lorem natus sit consectetur</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </telefones>
+                <especialidade name="p_especialidade" type="select" multiple="true" tags="false" load_service_data="false" domain="" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
+                    <label>Especialidade</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                </especialidade>
+                <estado name="p_estado" type="checkbox" maxlength="250" required="false" change="false" readonly="false" disabled="false" right="true" java-type="int" tooltip="false" disable_copy_paste="false" switch="true" check="true">
+                    <label>Estado</label>
+                    <value>1</value>
+                </estado>
+                <hidden name="p_id_medico" type="hidden" maxlength="250" java-type="Integer" tooltip="false" disable_copy_paste="false" tag="id_medico"/>
+            </fields>
+            <tools-bar>
+                <item id="button_fe17_4950" type="form" code="" class="success" rel="registrar" refresh_components="">
+                    <title>Registrar</title>
+                    <app>sistema_de_clinica</app>
+                    <page>Listar_medico</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_clinica/listar_medico/Listar_medico.xml?</parameter>
+                    <target>submit</target>
+                    <img>success|fa-save</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_clinica/listar_medico/Listar_medico.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

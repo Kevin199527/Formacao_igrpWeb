@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP/images/IGRP/IGRP2.3/app/igrp/configdatabase/ConfigDatabase.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>ConfigDatabase</page>
+    <app>igrp</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.igrp.pages</package_db>
+        <package_html>ConfigDatabase</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=37</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Configurar Base de Dados de uma aplicação</title>
+        <sectionheader_1 type="sectionheader" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <sectionheader_1_text type="text" name="p_sectionheader_1_text" persist="true" maxlength="4000">
+                    <value>
+                        <![CDATA[Configuração da base de dados]]>
+                    </value>
+                </sectionheader_1_text>
+            </fields>
+        </sectionheader_1>
+        <toolsbar_1 type="toolsbar" xml-type="toolsbar" gen-type="menu" gen-group="">
+            <item type="specific" code="" rel="gravar" refresh_components="">
+                <title>Testar conexão e gravar</title>
+                <app>igrp</app>
+                <page>ConfigDatabase</page>
+                <link>index</link>
+                <target>submit</target>
+                <img>primary|fa-save</img>
+                <preview>../images/IGRP/IGRP2.3/app/igrp/configdatabase/ConfigDatabase.xml</preview>
+            </item>
+        </toolsbar_1>
+        <form_1 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <aplicacao name="p_aplicacao" type="select" multiple="false" domain="" maxlength="30" required="true" change="false" disabled="false" right="false" java-type="" tags="false" load_service_data="false" tooltip="false" disable_copy_paste="false">
+                    <label>Aplicação</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                </aplicacao>
+                <tipo_base_dados name="p_tipo_base_dados" type="select" multiple="false" maxlength="20" required="true" change="true" disabled="false" right="false" domain="" java-type="" tags="false" load_service_data="false" tooltip="false" disable_copy_paste="false">
+                    <label>Tipo de base de dados</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                    <rules/>
+                </tipo_base_dados>
+                <nome_de_conexao name="p_nome_de_conexao" type="text" maxlength="255" required="true" change="false" readonly="false" disabled="false" placeholder="A name ex: myConn, DEVNOSI" right="false" desclabel="false" disablehtml="true" inputmask="" tooltip="false" disable_copy_paste="false">
+                    <label>Nome da conexão</label>
+                    <value>Consectetur natus unde sit deserunt</value>
+                </nome_de_conexao>
+                <config name="p_config" type="separator" maxlength="30" placeholder="" right="false" desclabel="false" tooltip="false" disable_copy_paste="false">
+                    <label>Config</label>
+                </config>
+                <url_connection name="p_url_connection" type="text" maxlength="255" required="true" change="false" readonly="false" disabled="false" placeholder="" right="false" desclabel="false" disablehtml="true" inputmask="" tooltip="false" disable_copy_paste="false">
+                    <label>Url Connection</label>
+                    <value>Laudantium sit deserunt adipiscing consectetur</value>
+                </url_connection>
+                <driver_connection name="p_driver_connection" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" right="false" desclabel="false" disablehtml="true" inputmask="" tooltip="true" disable_copy_paste="false">
+                    <label>Driver Connection (JDBC)</label>
+                    <value>Mollit sit voluptatem consectetur rem</value>
+                </driver_connection>
+                <paragraph_1 name="p_paragraph_1" type="plaintext" clear="false" maxlength="250" right="false" disable_output_escaping="false" html_class="" tooltip="false" disable_copy_paste="false">
+                    <label>Example</label>
+                    <value>Aliqua omnis natus amet elit natus laudantium accusantium stract mollit sit omnis ipsum adipiscing perspiciatis omnis aperiam doloremque laudantium unde amet sit aperiam amet aperiam</value>
+                </paragraph_1>
+                <sql_dialect name="p_sql_dialect" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" desclabel="false" inputmask="" right="true" tooltip="true" disable_copy_paste="false">
+                    <label>SQL Dialect</label>
+                    <value>Rem stract ipsum sed omnis</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </sql_dialect>
+                <credenciais name="p_credenciais" type="separator" maxlength="30" placeholder="" right="false" desclabel="false" tooltip="false" disable_copy_paste="false">
+                    <label>Credenciais</label>
+                </credenciais>
+                <username name="p_username" type="text" maxlength="80" required="true" change="false" readonly="false" disabled="false" placeholder="" right="false" desclabel="false" disablehtml="true" inputmask="" tooltip="false" disable_copy_paste="false">
+                    <label>Username</label>
+                    <value>Ut amet consectetur rem ipsum</value>
+                </username>
+                <password name="p_password" type="password" maxlength="80" required="false" change="false" readonly="false" disabled="false" placeholder="" right="false" desclabel="false" tooltip="false" disable_copy_paste="true">
+                    <label>Password</label>
+                    <value>******</value>
+                </password>
+                <save_properties name="p_save_properties" type="checkbox" maxlength="250" required="false" change="false" readonly="false" disabled="false" right="false" java-type="int" tooltip="false" disable_copy_paste="false" switch="true" check="true">
+                    <label>Gravar em .properties</label>
+                    <value>1</value>
+                    <rules/>
+                </save_properties>
+                <abrir_cfgxml name="p_abrir_cfgxml" type="link" target="modal" request_fields="" target_fields="" closerefresh="false" refresh_components="" refresh_submit="false" adbcli="" action="index" page="ConfigDatabase" app="igrp" custom_action="" action_type="false" class="info" btnSize="" iconColor="#333" iconClass="" img="fa-file-excel-o" maxlength="250" placeholder="Para o mapeamento" desclabel="true" right="false" tooltip="false" disable_copy_paste="false">
+                    <label>Abrir .cfg.xml</label>
+                    <value>/IGRP/images/IGRP/IGRP2.3/app/igrp/configdatabase/ConfigDatabase.xml</value>
+                </abrir_cfgxml>
+            </fields>
+        </form_1>
+        <table_1 type="table" xml-type="table" gen-type="container" gen-group="true">
+            <fields>
+                <default_ name="p_default_" type="radio" maxlength="30" align="left" lookup_parser="false" iskey="false" java-type="" showLabel="true" group_in="" check="true" desc="true">
+                    <label>Default</label>
+                    <rules>
+                        <rule type="remote">
+                            <proc>changeStatus</proc>
+                            <requestFields>
+                                <item>p_default_</item>
+                                <item>p_nome_de_conexao_tabela</item>
+                                <item>p_user_name_tabela</item>
+                                <item>p_id</item>
+                            </requestFields>
+                        </rule>
+                    </rules>
+                </default_>
+                <nome_de_conexao_tabela name="p_nome_de_conexao_tabela" type="text" maxlength="30" align="left" lookup_parser="false" iskey="true" showLabel="true" group_in="">
+                    <label>Nome da conexão</label>
+                </nome_de_conexao_tabela>
+                <user_name_tabela name="p_user_name_tabela" type="text" maxlength="30" align="left" lookup_parser="false" iskey="false" showLabel="true" group_in="">
+                    <label>Username</label>
+                </user_name_tabela>
+                <tipo_de_base_de_dados_tabela name="p_tipo_de_base_de_dados_tabela" type="text" maxlength="30" align="left" lookup_parser="false" iskey="false" showLabel="true" group_in="">
+                    <label>Tipo de base de dados</label>
+                </tipo_de_base_de_dados_tabela>
+                <t_url_connection name="p_t_url_connection" type="text" maxlength="30" align="left" lookup_parser="false" iskey="false" showLabel="true" group_in="">
+                    <label>Url Connection</label>
+                </t_url_connection>
+                <t_driver_connection name="p_t_driver_connection" type="text" maxlength="30" align="left" lookup_parser="false" iskey="false" showLabel="true" group_in="">
+                    <label>Driver Connection</label>
+                </t_driver_connection>
+                <id name="p_id" type="hidden" maxlength="30" iskey="true" java-type="" showLabel="true" group_in="" tag="id"/>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <default_ name="p_default_" check="true" desc="true">1</default_>
+                        <default__desc name="p_default__desc">1</default__desc>
+                        <nome_de_conexao_tabela name="p_nome_de_conexao_tabela">Iste accusantium sit sed lorem</nome_de_conexao_tabela>
+                        <user_name_tabela name="p_user_name_tabela">Unde anim elit sit rem</user_name_tabela>
+                        <tipo_de_base_de_dados_tabela name="p_tipo_de_base_de_dados_tabela">Magna rem ut sit accusantium</tipo_de_base_de_dados_tabela>
+                        <t_url_connection name="p_t_url_connection">Amet mollit aliqua omnis lauda</t_url_connection>
+                        <t_driver_connection name="p_t_driver_connection">Ipsum consectetur accusantium</t_driver_connection>
+                        <id name="p_id" tag="id">hidden-0eee_678a</id>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <default_ name="p_default_" check="true" desc="true">1</default_>
+                        <default__desc name="p_default__desc">1</default__desc>
+                        <nome_de_conexao_tabela name="p_nome_de_conexao_tabela">Natus lorem omnis iste amet</nome_de_conexao_tabela>
+                        <user_name_tabela name="p_user_name_tabela">Natus deserunt elit accusantiu</user_name_tabela>
+                        <tipo_de_base_de_dados_tabela name="p_tipo_de_base_de_dados_tabela">Aperiam elit stract unde adipi</tipo_de_base_de_dados_tabela>
+                        <t_url_connection name="p_t_url_connection">Sit ipsum natus rem voluptatem</t_url_connection>
+                        <t_driver_connection name="p_t_driver_connection">Totam officia omnis voluptatem</t_driver_connection>
+                        <id name="p_id" tag="id">hidden-1c10_ba06</id>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <default_ name="p_default_" check="true" desc="true">1</default_>
+                        <default__desc name="p_default__desc">1</default__desc>
+                        <nome_de_conexao_tabela name="p_nome_de_conexao_tabela">Omnis stract ut unde elit</nome_de_conexao_tabela>
+                        <user_name_tabela name="p_user_name_tabela">Ipsum perspiciatis elit iste s</user_name_tabela>
+                        <tipo_de_base_de_dados_tabela name="p_tipo_de_base_de_dados_tabela">Ut adipiscing sit stract elit</tipo_de_base_de_dados_tabela>
+                        <t_url_connection name="p_t_url_connection">Aliqua aperiam anim omnis stra</t_url_connection>
+                        <t_driver_connection name="p_t_driver_connection">Stract officia lorem sit lauda</t_driver_connection>
+                        <id name="p_id" tag="id">hidden-4cb1_1438</id>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <default_ name="p_default_" check="true" desc="true">1</default_>
+                        <default__desc name="p_default__desc">1</default__desc>
+                        <nome_de_conexao_tabela name="p_nome_de_conexao_tabela">Iste aliqua deserunt elit volu</nome_de_conexao_tabela>
+                        <user_name_tabela name="p_user_name_tabela">Sit laudantium stract officia</user_name_tabela>
+                        <tipo_de_base_de_dados_tabela name="p_tipo_de_base_de_dados_tabela">Dolor sed consectetur dolor am</tipo_de_base_de_dados_tabela>
+                        <t_url_connection name="p_t_url_connection">Labore aperiam stract officia</t_url_connection>
+                        <t_driver_connection name="p_t_driver_connection">Elit dolor doloremque accusant</t_driver_connection>
+                        <id name="p_id" tag="id">hidden-5670_5db7</id>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <default_ name="p_default_" check="true" desc="true">1</default_>
+                        <default__desc name="p_default__desc">1</default__desc>
+                        <nome_de_conexao_tabela name="p_nome_de_conexao_tabela">Perspiciatis sit doloremque la</nome_de_conexao_tabela>
+                        <user_name_tabela name="p_user_name_tabela">Perspiciatis sit sit magna lau</user_name_tabela>
+                        <tipo_de_base_de_dados_tabela name="p_tipo_de_base_de_dados_tabela">Iste labore iste officia aliqu</tipo_de_base_de_dados_tabela>
+                        <t_url_connection name="p_t_url_connection">Aliqua sit magna adipiscing mo</t_url_connection>
+                        <t_driver_connection name="p_t_driver_connection">Amet stract officia consectetu</t_driver_connection>
+                        <id name="p_id" tag="id">hidden-0a47_ad90</id>
+                    </row>
+                </value>
+                <context-menu>
+                    <item id="button_0e9d_8b34" type="specific" code="" class="warning" rel="edit" custom_return="true" refresh_components="">
+                        <title>Edit</title>
+                        <app>igrp</app>
+                        <page>ConfigDatabase</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/igrp/configdatabase/ConfigDatabase.xml?</parameter>
+                        <target>submit</target>
+                        <img>warning|fa-pencil</img>
+                        <preview>../images/IGRP/IGRP2.3/app/igrp/configdatabase/ConfigDatabase.xml</preview>
+                    </item>
+                    <item id="button_07f5_0d9a" type="specific" code="" class="danger" rel="delete" custom_return="true" refresh_components="" labelConfirm="Deseja realmente realizar esta operação?">
+                        <title>Delete</title>
+                        <app>igrp</app>
+                        <page>Dominio</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/igrp/dominio/Dominio.xml?</parameter>
+                        <target>alert_submit</target>
+                        <img>danger|fa-trash</img>
+                        <preview>../images/IGRP/IGRP2.3/app/igrp/dominio/Dominio.xml</preview>
+                    </item>
+                </context-menu>
+            </table>
+        </table_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

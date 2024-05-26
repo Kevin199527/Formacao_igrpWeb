@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/Formacao_igrpWeb/images/IGRP/IGRP2.3/app/sistema_de_clinica/cm_t_especialidadelist/Cm_t_especialidadeList.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/Formacao_igrpWeb/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Cm_t_especialidadeList</page>
+    <app>sistema_de_clinica</app>
+    <plsql>
+        <action>index</action>
+        <package_instance>sistema_de_clinica_postgresql_1</package_instance>
+        <package_db>nosi.webapps.sistema_de_clinica.pages</package_db>
+        <package_html>Cm_t_especialidadeList</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=105</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Listar cm_t_especialidade</title>
+        <toolsbar_1 type="toolsbar" xml-type="toolsbar" gen-type="menu" gen-group="">
+            <item type="specific" code="" rel="new" refresh_components="">
+                <title>Novo</title>
+                <app>sistema_de_clinica</app>
+                <page>Cm_t_especialidadeForm</page>
+                <link>index</link>
+                <target>modal|refresh</target>
+                <img>success|fa-plus</img>
+                <preview>../images/IGRP/IGRP2.3/app/sistema_de_clinica/cm_t_especialidadeform/Cm_t_especialidadeForm.xml</preview>
+            </item>
+        </toolsbar_1>
+        <table_1 type="table" xml-type="table" title="Lista de Especialidade" gen-type="container" gen-group="true">
+            <fields>
+                <id name="p_id" type="hidden" iskey="true" java-type="Integer" maxlength="30" showLabel="true" group_in="" tag="id"/>
+                <nome name="p_nome" type="text" maxlength="200" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Nome</label>
+                </nome>
+                <estado name="p_estado" type="text" maxlength="3" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Estado</label>
+                </estado>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <id name="p_id" tag="id">hidden-0664_4135</id>
+                        <nome name="p_nome">Amet magna adipiscing laudantium lorem</nome>
+                        <estado name="p_estado">Sit</estado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <id name="p_id" tag="id">hidden-1708_6355</id>
+                        <nome name="p_nome">Magna ut elit accusantium ut</nome>
+                        <estado name="p_estado">Per</estado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <id name="p_id" tag="id">hidden-f7c8_89dc</id>
+                        <nome name="p_nome">Ipsum perspiciatis aperiam ipsum sit</nome>
+                        <estado name="p_estado">Str</estado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <id name="p_id" tag="id">hidden-19eb_e87d</id>
+                        <nome name="p_nome">Perspiciatis voluptatem elit sit sit</nome>
+                        <estado name="p_estado">Per</estado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <id name="p_id" tag="id">hidden-d019_2628</id>
+                        <nome name="p_nome">Totam aperiam sit deserunt aperiam</nome>
+                        <estado name="p_estado">Des</estado>
+                    </row>
+                </value>
+                <context-menu>
+                    <item id="button_8d97_eedb" type="specific" code="" class="warning" rel="update" refresh_components="">
+                        <title>Editar</title>
+                        <app>sistema_de_clinica</app>
+                        <page>Cm_t_especialidadeForm</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_clinica/cm_t_especialidadeform/Cm_t_especialidadeForm.xml?</parameter>
+                        <target>mpsubmit|refresh</target>
+                        <img>warning|fa-pencil</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_clinica/cm_t_especialidadeform/Cm_t_especialidadeForm.xml</preview>
+                    </item>
+                    <item id="button_e79f_16f0" type="specific" code="" class="danger" rel="delete" refresh_components="" labelConfirm="Deseja realmente realizar esta operação?">
+                        <title>Eliminar</title>
+                        <app>sistema_de_clinica</app>
+                        <page>Cm_t_especialidadeList</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_clinica/cm_t_especialidadelist/Cm_t_especialidadeList.xml?</parameter>
+                        <target>confirm</target>
+                        <img>danger|fa-trash</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_clinica/cm_t_especialidadelist/Cm_t_especialidadeList.xml</preview>
+                    </item>
+                </context-menu>
+            </table>
+        </table_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

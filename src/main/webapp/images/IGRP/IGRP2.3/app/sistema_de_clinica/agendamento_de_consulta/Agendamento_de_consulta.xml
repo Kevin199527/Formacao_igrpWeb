@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/Formacao_igrpWeb/images/IGRP/IGRP2.3/app/sistema_de_clinica/agendamento_de_consulta/Agendamento_de_consulta.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/Formacao_igrpWeb/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Agendamento_de_consulta</page>
+    <app>sistema_de_clinica</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_clinica.pages</package_db>
+        <package_html>Agendamento_de_consulta</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=99</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Horario de Atendimento</title>
+        <horario_de_atendimento type="separatorlist" xml-type="separatorlist" title="Horários de Atendimento" gen-clean="true" gen-type="container" gen-group="true">
+            <fields>
+                <data name="p_data" type="date" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" class="primary" desc="true">
+                    <label>Data</label>
+                    <value>02-08-2015</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </data>
+                <especialidade name="p_especialidade" type="select" multiple="false" tags="false" load_service_data="false" domain="" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="" desc="true">
+                    <label>Especialidade</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                </especialidade>
+                <consultorio name="p_consultorio" type="lookup" action="index" page="Pesquisa_geografia" app="sistema_de_clinica" field_param="" lookup_eraser="true" lookup_type="LOOKUP" class="primary" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" desc="true">
+                    <label>Consultório</label>
+                    <value/>
+                    <lookup>../images/IGRP/IGRP2.3/app/sistema_de_clinica/pesquisa_geografia/Pesquisa_geografia.xml</lookup>
+                    <lookupParams>
+                        <param field-target="p_consultorio">treemenu_1_link_desc</param>
+                        <param field-target="p_consultorio_id">treemenu_1_tmid</param>
+                    </lookupParams>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </consultorio>
+                <hora_inicio_ name="p_hora_inicio_" type="time" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" desc="true">
+                    <label>Hora Inicio </label>
+                    <value>03:45</value>
+                </hora_inicio_>
+                <hora_fim name="p_hora_fim" type="time" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" desc="true">
+                    <label>Hora Fim</label>
+                    <value>13:07</value>
+                </hora_fim>
+                <consultorio_id name="p_consultorio_id" type="hidden" maxlength="250" java-type="String" tag="consultorio_id" desc="true">
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </consultorio_id>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <data name="p_data" desc="true">08-06-2012</data>
+                        <data_check name="p_data_check">08-06-2012</data_check>
+                        <especialidade name="p_especialidade" desc="true">2</especialidade>
+                        <especialidade_check name="p_especialidade_check">2</especialidade_check>
+                        <consultorio name="p_consultorio" desc="true"/>
+                        <consultorio_check name="p_consultorio_check"/>
+                        <hora_inicio_ name="p_hora_inicio_" desc="true">06:17</hora_inicio_>
+                        <hora_inicio__check name="p_hora_inicio__check">06:17</hora_inicio__check>
+                        <hora_fim name="p_hora_fim" desc="true">03:26</hora_fim>
+                        <hora_fim_check name="p_hora_fim_check">03:26</hora_fim_check>
+                        <consultorio_id name="p_consultorio_id" tag="consultorio_id" desc="true">hidden-ddd2_bb42</consultorio_id>
+                        <consultorio_id_check name="p_consultorio_id_check">hidden-ddd2_bb42</consultorio_id_check>
+                    </row>
+                    <row>
+                        <data name="p_data" desc="true">08-06-2014</data>
+                        <data_check name="p_data_check">08-06-2014</data_check>
+                        <especialidade name="p_especialidade" desc="true">2</especialidade>
+                        <especialidade_check name="p_especialidade_check">2</especialidade_check>
+                        <consultorio name="p_consultorio" desc="true"/>
+                        <consultorio_check name="p_consultorio_check"/>
+                        <hora_inicio_ name="p_hora_inicio_" desc="true">08:06</hora_inicio_>
+                        <hora_inicio__check name="p_hora_inicio__check">08:06</hora_inicio__check>
+                        <hora_fim name="p_hora_fim" desc="true">03:02</hora_fim>
+                        <hora_fim_check name="p_hora_fim_check">03:02</hora_fim_check>
+                        <consultorio_id name="p_consultorio_id" tag="consultorio_id" desc="true">hidden-f218_6662</consultorio_id>
+                        <consultorio_id_check name="p_consultorio_id_check">hidden-f218_6662</consultorio_id_check>
+                    </row>
+                    <row>
+                        <data name="p_data" desc="true">07-07-2011</data>
+                        <data_check name="p_data_check">07-07-2011</data_check>
+                        <especialidade name="p_especialidade" desc="true">2</especialidade>
+                        <especialidade_check name="p_especialidade_check">2</especialidade_check>
+                        <consultorio name="p_consultorio" desc="true"/>
+                        <consultorio_check name="p_consultorio_check"/>
+                        <hora_inicio_ name="p_hora_inicio_" desc="true">01:48</hora_inicio_>
+                        <hora_inicio__check name="p_hora_inicio__check">01:48</hora_inicio__check>
+                        <hora_fim name="p_hora_fim" desc="true">02:23</hora_fim>
+                        <hora_fim_check name="p_hora_fim_check">02:23</hora_fim_check>
+                        <consultorio_id name="p_consultorio_id" tag="consultorio_id" desc="true">hidden-5e2a_ccd5</consultorio_id>
+                        <consultorio_id_check name="p_consultorio_id_check">hidden-5e2a_ccd5</consultorio_id_check>
+                    </row>
+                    <row>
+                        <data name="p_data" desc="true">01-02-2014</data>
+                        <data_check name="p_data_check">01-02-2014</data_check>
+                        <especialidade name="p_especialidade" desc="true">2</especialidade>
+                        <especialidade_check name="p_especialidade_check">2</especialidade_check>
+                        <consultorio name="p_consultorio" desc="true"/>
+                        <consultorio_check name="p_consultorio_check"/>
+                        <hora_inicio_ name="p_hora_inicio_" desc="true">05:22</hora_inicio_>
+                        <hora_inicio__check name="p_hora_inicio__check">05:22</hora_inicio__check>
+                        <hora_fim name="p_hora_fim" desc="true">12:04</hora_fim>
+                        <hora_fim_check name="p_hora_fim_check">12:04</hora_fim_check>
+                        <consultorio_id name="p_consultorio_id" tag="consultorio_id" desc="true">hidden-4c83_d23e</consultorio_id>
+                        <consultorio_id_check name="p_consultorio_id_check">hidden-4c83_d23e</consultorio_id_check>
+                    </row>
+                    <row>
+                        <data name="p_data" desc="true">04-02-2014</data>
+                        <data_check name="p_data_check">04-02-2014</data_check>
+                        <especialidade name="p_especialidade" desc="true">2</especialidade>
+                        <especialidade_check name="p_especialidade_check">2</especialidade_check>
+                        <consultorio name="p_consultorio" desc="true"/>
+                        <consultorio_check name="p_consultorio_check"/>
+                        <hora_inicio_ name="p_hora_inicio_" desc="true">03:11</hora_inicio_>
+                        <hora_inicio__check name="p_hora_inicio__check">03:11</hora_inicio__check>
+                        <hora_fim name="p_hora_fim" desc="true">04:11</hora_fim>
+                        <hora_fim_check name="p_hora_fim_check">04:11</hora_fim_check>
+                        <consultorio_id name="p_consultorio_id" tag="consultorio_id" desc="true">hidden-b194_7abe</consultorio_id>
+                        <consultorio_id_check name="p_consultorio_id_check">hidden-b194_7abe</consultorio_id_check>
+                    </row>
+                </value>
+            </table>
+        </horario_de_atendimento>
+        <toolsbar_1 type="toolsbar" xml-type="toolsbar" gen-type="menu" gen-group="">
+            <item type="specific" code="" rel="gravar" custom_return="true" refresh_components="">
+                <title>Gravar</title>
+                <app>sistema_de_clinica</app>
+                <page>Agendamento_de_consulta</page>
+                <link>index</link>
+                <target>submit</target>
+                <img>success|fa-save</img>
+                <preview>../images/IGRP/IGRP2.3/app/sistema_de_clinica/agendamento_de_consulta/Agendamento_de_consulta.xml</preview>
+            </item>
+        </toolsbar_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml></xml>
+    </blockly>
+</rows>

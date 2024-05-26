@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/Formacao_igrpWeb/images/IGRP/IGRP2.3/app/sistema_de_clinica/consultas_marcadas/Consultas_marcadas.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/Formacao_igrpWeb/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Consultas_marcadas</page>
+    <app>sistema_de_clinica</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_clinica.pages</package_db>
+        <package_html>Consultas_marcadas</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=98</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Consultas Agendadas</title>
+        <form_1 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <data_inicio name="p_data_inicio" type="date" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" tooltip="false" disable_copy_paste="false" class="primary">
+                    <label>Data Inicio</label>
+                    <value>04-07-2014</value>
+                </data_inicio>
+                <data_fim name="p_data_fim" type="date" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" tooltip="false" disable_copy_paste="false" class="primary">
+                    <label>Data Fim</label>
+                    <value>05-06-2017</value>
+                </data_fim>
+            </fields>
+            <tools-bar>
+                <item id="button_2ba1_844f" type="form" code="" class="warning" rel="pesquisar" custom_return="true" refresh_components="">
+                    <title>Pesquisar</title>
+                    <app>sistema_de_clinica</app>
+                    <page>Listar_medico</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_clinica/listar_medico/Listar_medico.xml?</parameter>
+                    <target>_blank</target>
+                    <img>warning|fa-search</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_clinica/listar_medico/Listar_medico.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
+        <table_1 type="table" xml-type="table" title="Consulta Agendada" gen-type="container" gen-group="true">
+            <fields>
+                <data_consulta_ name="p_data_consulta_" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Data Consulta </label>
+                </data_consulta_>
+                <nome_paciente name="p_nome_paciente" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Nome Paciente</label>
+                </nome_paciente>
+                <especialidade name="p_especialidade" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Especialidade</label>
+                </especialidade>
+                <hora_inicio name="p_hora_inicio" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Hora Inicio</label>
+                </hora_inicio>
+                <hora_fim_ name="p_hora_fim_" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Hora Fim </label>
+                </hora_fim_>
+                <id_medico name="p_id_medico" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_medico"/>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <data_consulta_ name="p_data_consulta_">Adipiscing ut sit aperiam tota</data_consulta_>
+                        <nome_paciente name="p_nome_paciente">Lorem sed perspiciatis dolor t</nome_paciente>
+                        <especialidade name="p_especialidade">Deserunt ipsum voluptatem laud</especialidade>
+                        <hora_inicio name="p_hora_inicio">Mollit officia amet aliqua des</hora_inicio>
+                        <hora_fim_ name="p_hora_fim_">Rem laudantium consectetur vol</hora_fim_>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-efd2_2a9f</id_medico>
+                    </row>
+                    <row>
+                        <data_consulta_ name="p_data_consulta_">Unde perspiciatis unde omnis s</data_consulta_>
+                        <nome_paciente name="p_nome_paciente">Voluptatem magna ipsum sit nat</nome_paciente>
+                        <especialidade name="p_especialidade">Officia ipsum accusantium unde</especialidade>
+                        <hora_inicio name="p_hora_inicio">Rem lorem sed anim stract</hora_inicio>
+                        <hora_fim_ name="p_hora_fim_">Ipsum labore ut unde rem</hora_fim_>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-1634_d30a</id_medico>
+                    </row>
+                    <row>
+                        <data_consulta_ name="p_data_consulta_">Anim officia voluptatem lorem</data_consulta_>
+                        <nome_paciente name="p_nome_paciente">Ipsum voluptatem iste labore i</nome_paciente>
+                        <especialidade name="p_especialidade">Aliqua sit dolor sed dolor</especialidade>
+                        <hora_inicio name="p_hora_inicio">Elit dolor officia voluptatem</hora_inicio>
+                        <hora_fim_ name="p_hora_fim_">Rem ipsum aperiam accusantium</hora_fim_>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-c66f_6edc</id_medico>
+                    </row>
+                    <row>
+                        <data_consulta_ name="p_data_consulta_">Ut doloremque natus consectetu</data_consulta_>
+                        <nome_paciente name="p_nome_paciente">Ut officia accusantium natus a</nome_paciente>
+                        <especialidade name="p_especialidade">Unde omnis aliqua lorem sit</especialidade>
+                        <hora_inicio name="p_hora_inicio">Officia natus aliqua sit amet</hora_inicio>
+                        <hora_fim_ name="p_hora_fim_">Stract consectetur amet rem do</hora_fim_>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-089d_924e</id_medico>
+                    </row>
+                    <row>
+                        <data_consulta_ name="p_data_consulta_">Sit ut voluptatem sit iste</data_consulta_>
+                        <nome_paciente name="p_nome_paciente">Doloremque laudantium sit dese</nome_paciente>
+                        <especialidade name="p_especialidade">Sit totam elit rem labore</especialidade>
+                        <hora_inicio name="p_hora_inicio">Accusantium sit aliqua aperiam</hora_inicio>
+                        <hora_fim_ name="p_hora_fim_">Voluptatem accusantium anim si</hora_fim_>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-33aa_2fb2</id_medico>
+                    </row>
+                </value>
+            </table>
+        </table_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/Formacao_igrpWeb/images/IGRP/IGRP2.3/app/grh/pagina_inicial/Pagina_inicial.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/Formacao_igrpWeb/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Pagina_inicial</page>
+    <app>grh</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.grh.pages</package_db>
+        <package_html>Pagina_inicial</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=88</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Pagina Inicial</title>
+        <view_1 type="view" xml-type="view" gen-type="container" gen-group="">
+            <fields>
+                <nome name="p_nome" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="fa-user" showlabel="true">
+                    <label>Nome</label>
+                    <value>Natus magna sit anim deserunt</value>
+                </nome>
+                <email name="p_email" type="email" maxlength="250" class="default" iconColor="#333" iconClass="" img="fa-at" showlabel="true">
+                    <label>Email</label>
+                    <value>puri@example.com</value>
+                </email>
+                <username name="p_username" type="email" maxlength="250" class="default" iconColor="#333" iconClass="" img="fa-user-circle" showlabel="true">
+                    <label>Username</label>
+                    <value>golper@example.com</value>
+                </username>
+                <telefone name="p_telefone" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" class="default" iconColor="#333" iconClass="" img="fa-phone" showlabel="true">
+                    <label>Telefone</label>
+                    <value>177</value>
+                </telefone>
+                <telemovel name="p_telemovel" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" class="default" iconColor="#333" iconClass="" img="fa-mobile" showlabel="true">
+                    <label>Telemovel</label>
+                    <value>51</value>
+                </telemovel>
+                <cni name="p_cni" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="fa-address-card" showlabel="true">
+                    <label>CNI</label>
+                    <value>Totam natus doloremque lorem doloremque</value>
+                </cni>
+                <view_1_img type="text" name="p_view_1_img" maxlength="300">
+                    <value>../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</value>
+                </view_1_img>
+            </fields>
+        </view_1>
+        <separatorlist_1 type="separatorlist" xml-type="separatorlist" gen-clean="true" gen-type="container" gen-group="true">
+            <fields>
+                <separatorlist_1_text_1 name="p_separatorlist_1_text_1" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" desclabel="false" right="false" desc="true">
+                    <label>Text</label>
+                    <value>Doloremque amet adipiscing rem labore</value>
+                </separatorlist_1_text_1>
+                <separatorlist_1_select_1 name="p_separatorlist_1_select_1" type="select" multiple="false" tags="false" load_service_data="false" domain="ESTADO « grh" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="" desc="true">
+                    <label>Select</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Aluno</text>
+                            <value>A</value>
+                        </option>
+                        <option>
+                            <text>Professores</text>
+                            <value>P</value>
+                        </option>
+                    </list>
+                </separatorlist_1_select_1>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <separatorlist_1_text_1 name="p_separatorlist_1_text_1" desc="true">Stract ipsum aperiam lorem iste</separatorlist_1_text_1>
+                        <separatorlist_1_text_1_check name="p_separatorlist_1_text_1_check">Stract ipsum aperiam lorem iste</separatorlist_1_text_1_check>
+                        <separatorlist_1_select_1 name="p_separatorlist_1_select_1" desc="true">2</separatorlist_1_select_1>
+                        <separatorlist_1_select_1_check name="p_separatorlist_1_select_1_check">2</separatorlist_1_select_1_check>
+                    </row>
+                    <row>
+                        <separatorlist_1_text_1 name="p_separatorlist_1_text_1" desc="true">Aperiam ipsum sit omnis elit</separatorlist_1_text_1>
+                        <separatorlist_1_text_1_check name="p_separatorlist_1_text_1_check">Aperiam ipsum sit omnis elit</separatorlist_1_text_1_check>
+                        <separatorlist_1_select_1 name="p_separatorlist_1_select_1" desc="true">2</separatorlist_1_select_1>
+                        <separatorlist_1_select_1_check name="p_separatorlist_1_select_1_check">2</separatorlist_1_select_1_check>
+                    </row>
+                    <row>
+                        <separatorlist_1_text_1 name="p_separatorlist_1_text_1" desc="true">Consectetur officia magna sit accusantium</separatorlist_1_text_1>
+                        <separatorlist_1_text_1_check name="p_separatorlist_1_text_1_check">Consectetur officia magna sit accusantium</separatorlist_1_text_1_check>
+                        <separatorlist_1_select_1 name="p_separatorlist_1_select_1" desc="true">2</separatorlist_1_select_1>
+                        <separatorlist_1_select_1_check name="p_separatorlist_1_select_1_check">2</separatorlist_1_select_1_check>
+                    </row>
+                    <row>
+                        <separatorlist_1_text_1 name="p_separatorlist_1_text_1" desc="true">Laudantium mollit consectetur labore laudantium</separatorlist_1_text_1>
+                        <separatorlist_1_text_1_check name="p_separatorlist_1_text_1_check">Laudantium mollit consectetur labore laudantium</separatorlist_1_text_1_check>
+                        <separatorlist_1_select_1 name="p_separatorlist_1_select_1" desc="true">2</separatorlist_1_select_1>
+                        <separatorlist_1_select_1_check name="p_separatorlist_1_select_1_check">2</separatorlist_1_select_1_check>
+                    </row>
+                    <row>
+                        <separatorlist_1_text_1 name="p_separatorlist_1_text_1" desc="true">Ipsum amet aperiam accusantium labore</separatorlist_1_text_1>
+                        <separatorlist_1_text_1_check name="p_separatorlist_1_text_1_check">Ipsum amet aperiam accusantium labore</separatorlist_1_text_1_check>
+                        <separatorlist_1_select_1 name="p_separatorlist_1_select_1" desc="true">2</separatorlist_1_select_1>
+                        <separatorlist_1_select_1_check name="p_separatorlist_1_select_1_check">2</separatorlist_1_select_1_check>
+                    </row>
+                </value>
+            </table>
+        </separatorlist_1>
+        <form_1 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields/>
+            <tools-bar>
+                <item id="button_f197_91f6" type="form" code="" flg_transaction="true" class="warning" rel="editar" refresh_components="">
+                    <title>Editar</title>
+                    <app>grh</app>
+                    <page>Pagina_inicial</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/grh/pagina_inicial/Pagina_inicial.xml?</parameter>
+                    <target>_blank</target>
+                    <img>warning|fa-edit</img>
+                    <preview>../images/IGRP/IGRP2.3/app/grh/pagina_inicial/Pagina_inicial.xml</preview>
+                </item>
+                <item id="button_4b09_a5b8" type="form" code="" flg_transaction="true" class="danger" rel="excluir" refresh_components="">
+                    <title>Excluir</title>
+                    <app>grh</app>
+                    <page>Pagina_inicial</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/grh/pagina_inicial/Pagina_inicial.xml?</parameter>
+                    <target>_blank</target>
+                    <img>danger|fa-times</img>
+                    <preview>../images/IGRP/IGRP2.3/app/grh/pagina_inicial/Pagina_inicial.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

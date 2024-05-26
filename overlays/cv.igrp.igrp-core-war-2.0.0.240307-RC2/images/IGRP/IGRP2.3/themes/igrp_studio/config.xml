@@ -1,0 +1,20 @@
+<style>
+
+	<logo>../../assets/img/iconApp/igrp.svg</logo>
+
+	<nav>
+		<buttonsHover>#136813</buttonsHover>
+	</nav>
+ 	
+	<sidebar>
+		<background>#136813</background>
+	</sidebar>
+	
+	<colors>
+		
+		<color name="secondary">#247724</color>
+	</colors>
+
+	
+
+</style>

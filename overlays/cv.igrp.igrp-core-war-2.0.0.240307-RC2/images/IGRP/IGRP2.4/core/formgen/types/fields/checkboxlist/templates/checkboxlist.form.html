@@ -1,0 +1,11 @@
+<div class="col-sm-#[size]# #[right]#" item-name="#tag#" item-type="#type#">
+
+    <xsl:apply-templates mode="igrp-form-checkboxlist-field" select="#path#">
+        <xsl:with-param name="change" select="'#[change]#'"/>
+        <xsl:with-param name="declabel" select="'#[declabel]#'"/>
+        <xsl:with-param name="inputmask" select="'#[inputmask]#'"/>
+        <xsl:with-param name="maxlength" select="'#[maxlength]#'"/>
+        <xsl:with-param name="child-size" select="'#[child_size]#'"/>
+    </xsl:apply-templates>
+    
+</div>

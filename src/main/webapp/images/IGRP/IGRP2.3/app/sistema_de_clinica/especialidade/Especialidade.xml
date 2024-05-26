@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/Formacao_igrpWeb/images/IGRP/IGRP2.3/app/sistema_de_clinica/especialidade/Especialidade.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/Formacao_igrpWeb/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Especialidade</page>
+    <app>sistema_de_clinica</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_clinica.pages</package_db>
+        <package_html>Especialidade</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=150</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Especialidade</title>
+        <especialidade_form type="formlist" xml-type="formlist" title="Especialidade" gen-clean="true" gen-type="container" gen-group="true">
+            <fields>
+                <nome_especialidade name="p_nome_especialidade" type="text" maxlength="230" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="" right="false" desc="true">
+                    <label>Nome Especialidade</label>
+                </nome_especialidade>
+                <estado name="p_estado" type="select" multiple="false" tags="false" load_service_data="false" domain="ESTADO « sistema_de_clinica" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="" delimiter=";" desc="true">
+                    <label>Estado</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>ATIVO</text>
+                            <value>A</value>
+                        </option>
+                        <option>
+                            <text>INACTIVO</text>
+                            <value>I</value>
+                        </option>
+                    </list>
+                </estado>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <nome_especialidade name="p_nome_especialidade" desc="true">Laudantium natus rem stract lorem</nome_especialidade>
+                        <nome_especialidade_check name="p_nome_especialidade_check">Laudantium natus rem stract lorem</nome_especialidade_check>
+                        <estado name="p_estado" desc="true">2</estado>
+                        <estado_check name="p_estado_check">2</estado_check>
+                    </row>
+                    <row>
+                        <nome_especialidade name="p_nome_especialidade" desc="true">Aliqua laudantium deserunt elit natus</nome_especialidade>
+                        <nome_especialidade_check name="p_nome_especialidade_check">Aliqua laudantium deserunt elit natus</nome_especialidade_check>
+                        <estado name="p_estado" desc="true">2</estado>
+                        <estado_check name="p_estado_check">2</estado_check>
+                    </row>
+                    <row>
+                        <nome_especialidade name="p_nome_especialidade" desc="true">Laudantium rem officia lorem labore</nome_especialidade>
+                        <nome_especialidade_check name="p_nome_especialidade_check">Laudantium rem officia lorem labore</nome_especialidade_check>
+                        <estado name="p_estado" desc="true">2</estado>
+                        <estado_check name="p_estado_check">2</estado_check>
+                    </row>
+                    <row>
+                        <nome_especialidade name="p_nome_especialidade" desc="true">Aperiam iste totam magna officia</nome_especialidade>
+                        <nome_especialidade_check name="p_nome_especialidade_check">Aperiam iste totam magna officia</nome_especialidade_check>
+                        <estado name="p_estado" desc="true">2</estado>
+                        <estado_check name="p_estado_check">2</estado_check>
+                    </row>
+                    <row>
+                        <nome_especialidade name="p_nome_especialidade" desc="true">Iste consectetur perspiciatis aliqua aperiam</nome_especialidade>
+                        <nome_especialidade_check name="p_nome_especialidade_check">Iste consectetur perspiciatis aliqua aperiam</nome_especialidade_check>
+                        <estado name="p_estado" desc="true">2</estado>
+                        <estado_check name="p_estado_check">2</estado_check>
+                    </row>
+                </value>
+            </table>
+        </especialidade_form>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

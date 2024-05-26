@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/Formacao_igrpWeb/images/IGRP/IGRP2.3/app/educart_cv/aula_1/Aula_1.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/Formacao_igrpWeb/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Aula_1</page>
+    <app>educart_cv</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.educart_cv.pages</package_db>
+        <package_html>Aula_1</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=86</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Aula_1</title>
+        <form_1 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <form_1_date_1 name="p_form_1_date_1" type="date" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" tooltip="false" disable_copy_paste="false" class="primary">
+                    <label>Date</label>
+                    <value>01-02-2012</value>
+                </form_1_date_1>
+                <form_1_select_1 name="p_form_1_select_1" type="select" multiple="false" tags="false" load_service_data="false" domain="ESTADO « educart_cv" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
+                    <label>Select</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Ativo</text>
+                            <value>A</value>
+                        </option>
+                        <option>
+                            <text>Inativo</text>
+                            <value>I</value>
+                        </option>
+                    </list>
+                </form_1_select_1>
+            </fields>
+            <tools-bar>
+                <item id="button_79e0_f116" type="form" code="" flg_transaction="true" class="primary" rel="form_1_button_1" refresh_components="">
+                    <title>Button</title>
+                    <app>educart_cv</app>
+                    <page>Aula_1</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/educart_cv/aula_1/Aula_1.xml?</parameter>
+                    <target>_blank</target>
+                    <img>primary|fa-angle-right</img>
+                    <preview>../images/IGRP/IGRP2.3/app/educart_cv/aula_1/Aula_1.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
+        <table_1 type="table" xml-type="table" gen-type="container" gen-group="true">
+            <fields>
+                <table_1_text_1 name="p_table_1_text_1" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Text</label>
+                </table_1_text_1>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <table_1_text_1 name="p_table_1_text_1">Omnis dolor magna accusantium</table_1_text_1>
+                    </row>
+                    <row>
+                        <table_1_text_1 name="p_table_1_text_1">Ipsum unde mollit lorem amet</table_1_text_1>
+                    </row>
+                    <row>
+                        <table_1_text_1 name="p_table_1_text_1">Omnis dolor elit rem stract</table_1_text_1>
+                    </row>
+                    <row>
+                        <table_1_text_1 name="p_table_1_text_1">Rem natus labore ut consectetu</table_1_text_1>
+                    </row>
+                    <row>
+                        <table_1_text_1 name="p_table_1_text_1">Ut magna aperiam aliqua labore</table_1_text_1>
+                    </row>
+                </value>
+            </table>
+        </table_1>
+        <toolsbar_1 type="toolsbar" xml-type="toolsbar" gen-type="menu" gen-group="">
+            <item type="specific" code="" rel="abrir_fatura_1" custom_return="true" refresh_components="">
+                <title>Abrir Fatura</title>
+                <app>educart_cv</app>
+                <page>Aula_1</page>
+                <link>index</link>
+                <target>_blank</target>
+                <img>success|fa-file-pdf-o</img>
+                <preview>../images/IGRP/IGRP2.3/app/educart_cv/aula_1/Aula_1.xml</preview>
+            </item>
+        </toolsbar_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

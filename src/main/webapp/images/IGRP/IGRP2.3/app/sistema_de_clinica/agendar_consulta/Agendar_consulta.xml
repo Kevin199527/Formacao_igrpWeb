@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/Formacao_igrpWeb/images/IGRP/IGRP2.3/app/sistema_de_clinica/agendar_consulta/Agendar_consulta.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/Formacao_igrpWeb/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Agendar_consulta</page>
+    <app>sistema_de_clinica</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_clinica.pages</package_db>
+        <package_html>Agendar_consulta</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=102</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Agendar Consulta</title>
+        <form_1 type="form" xml-type="form" title=" Agendar Consulta" gen-type="container" gen-group="">
+            <fields>
+                <data name="p_data" type="date" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" tooltip="false" disable_copy_paste="false" class="primary">
+                    <label>Data</label>
+                    <value>05-04-2014</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </data>
+                <especialidade_medica name="p_especialidade_medica" type="select" multiple="false" tags="false" load_service_data="false" domain="" maxlength="250" required="false" change="true" disabled="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
+                    <label>Especialidade Medica</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                </especialidade_medica>
+                <medico_com_especialidade name="p_medico_com_especialidade" type="select" multiple="false" tags="false" load_service_data="false" domain="" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
+                    <label>Medico Com Especialidade</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                </medico_com_especialidade>
+            </fields>
+        </form_1>
+        <formlist_1 type="formlist" xml-type="formlist" gen-clean="true" gen-type="container" gen-group="true">
+            <fields>
+                <medico name="p_medico" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" right="false" desc="true">
+                    <label>Medico</label>
+                </medico>
+                <especialidade name="p_especialidade" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" right="false" desc="true">
+                    <label>Especialidade</label>
+                </especialidade>
+                <hora_inicio name="p_hora_inicio" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" right="false" desc="true">
+                    <label>Hora inicio</label>
+                </hora_inicio>
+                <hora_fim_ name="p_hora_fim_" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" right="false" desc="true">
+                    <label>Hora Fim </label>
+                </hora_fim_>
+                <selecionar name="p_selecionar" type="checkbox" maxlength="250" required="false" change="false" readonly="false" disabled="false" right="false" java-type="int" check="true" desc="true">
+                    <label>Selecionar</label>
+                </selecionar>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <medico name="p_medico" desc="true">Lorem perspiciatis accusantium consectetur voluptatem</medico>
+                        <medico_check name="p_medico_check">Lorem perspiciatis accusantium consectetur voluptatem</medico_check>
+                        <especialidade name="p_especialidade" desc="true">Ut officia stract mollit ipsum</especialidade>
+                        <especialidade_check name="p_especialidade_check">Ut officia stract mollit ipsum</especialidade_check>
+                        <hora_inicio name="p_hora_inicio" desc="true">Anim adipiscing officia dolor mollit</hora_inicio>
+                        <hora_inicio_check name="p_hora_inicio_check">Anim adipiscing officia dolor mollit</hora_inicio_check>
+                        <hora_fim_ name="p_hora_fim_" desc="true">Natus omnis officia iste anim</hora_fim_>
+                        <hora_fim__check name="p_hora_fim__check">Natus omnis officia iste anim</hora_fim__check>
+                        <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
+                        <selecionar_check name="p_selecionar_check">1</selecionar_check>
+                    </row>
+                    <row>
+                        <medico name="p_medico" desc="true">Accusantium iste aliqua doloremque rem</medico>
+                        <medico_check name="p_medico_check">Accusantium iste aliqua doloremque rem</medico_check>
+                        <especialidade name="p_especialidade" desc="true">Iste omnis lorem laudantium aperiam</especialidade>
+                        <especialidade_check name="p_especialidade_check">Iste omnis lorem laudantium aperiam</especialidade_check>
+                        <hora_inicio name="p_hora_inicio" desc="true">Unde omnis voluptatem consectetur dolor</hora_inicio>
+                        <hora_inicio_check name="p_hora_inicio_check">Unde omnis voluptatem consectetur dolor</hora_inicio_check>
+                        <hora_fim_ name="p_hora_fim_" desc="true">Lorem dolor aliqua anim laudantium</hora_fim_>
+                        <hora_fim__check name="p_hora_fim__check">Lorem dolor aliqua anim laudantium</hora_fim__check>
+                        <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
+                        <selecionar_check name="p_selecionar_check">1</selecionar_check>
+                    </row>
+                    <row>
+                        <medico name="p_medico" desc="true">Perspiciatis labore unde perspiciatis accusantium</medico>
+                        <medico_check name="p_medico_check">Perspiciatis labore unde perspiciatis accusantium</medico_check>
+                        <especialidade name="p_especialidade" desc="true">Officia amet voluptatem stract amet</especialidade>
+                        <especialidade_check name="p_especialidade_check">Officia amet voluptatem stract amet</especialidade_check>
+                        <hora_inicio name="p_hora_inicio" desc="true">Ipsum consectetur omnis rem elit</hora_inicio>
+                        <hora_inicio_check name="p_hora_inicio_check">Ipsum consectetur omnis rem elit</hora_inicio_check>
+                        <hora_fim_ name="p_hora_fim_" desc="true">Totam ut magna perspiciatis aperiam</hora_fim_>
+                        <hora_fim__check name="p_hora_fim__check">Totam ut magna perspiciatis aperiam</hora_fim__check>
+                        <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
+                        <selecionar_check name="p_selecionar_check">1</selecionar_check>
+                    </row>
+                    <row>
+                        <medico name="p_medico" desc="true">Sit elit consectetur magna adipiscing</medico>
+                        <medico_check name="p_medico_check">Sit elit consectetur magna adipiscing</medico_check>
+                        <especialidade name="p_especialidade" desc="true">Perspiciatis deserunt aliqua unde doloremque</especialidade>
+                        <especialidade_check name="p_especialidade_check">Perspiciatis deserunt aliqua unde doloremque</especialidade_check>
+                        <hora_inicio name="p_hora_inicio" desc="true">Unde dolor aliqua consectetur voluptatem</hora_inicio>
+                        <hora_inicio_check name="p_hora_inicio_check">Unde dolor aliqua consectetur voluptatem</hora_inicio_check>
+                        <hora_fim_ name="p_hora_fim_" desc="true">Sit mollit aperiam doloremque magna</hora_fim_>
+                        <hora_fim__check name="p_hora_fim__check">Sit mollit aperiam doloremque magna</hora_fim__check>
+                        <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
+                        <selecionar_check name="p_selecionar_check">1</selecionar_check>
+                    </row>
+                    <row>
+                        <medico name="p_medico" desc="true">Mollit ut sed sit omnis</medico>
+                        <medico_check name="p_medico_check">Mollit ut sed sit omnis</medico_check>
+                        <especialidade name="p_especialidade" desc="true">Sit magna amet consectetur elit</especialidade>
+                        <especialidade_check name="p_especialidade_check">Sit magna amet consectetur elit</especialidade_check>
+                        <hora_inicio name="p_hora_inicio" desc="true">Iste sit unde adipiscing sed</hora_inicio>
+                        <hora_inicio_check name="p_hora_inicio_check">Iste sit unde adipiscing sed</hora_inicio_check>
+                        <hora_fim_ name="p_hora_fim_" desc="true">Elit totam anim labore anim</hora_fim_>
+                        <hora_fim__check name="p_hora_fim__check">Elit totam anim labore anim</hora_fim__check>
+                        <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
+                        <selecionar_check name="p_selecionar_check">1</selecionar_check>
+                    </row>
+                </value>
+            </table>
+        </formlist_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

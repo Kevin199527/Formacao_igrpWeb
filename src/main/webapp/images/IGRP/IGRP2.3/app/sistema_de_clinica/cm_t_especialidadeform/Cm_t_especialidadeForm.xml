@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/Formacao_igrpWeb/images/IGRP/IGRP2.3/app/sistema_de_clinica/cm_t_especialidadeform/Cm_t_especialidadeForm.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/Formacao_igrpWeb/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Cm_t_especialidadeForm</page>
+    <app>sistema_de_clinica</app>
+    <plsql>
+        <action>index</action>
+        <package_instance>sistema_de_clinica_postgresql_1</package_instance>
+        <package_db>nosi.webapps.sistema_de_clinica.pages</package_db>
+        <package_html>Cm_t_especialidadeForm</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=104</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Registar cm_t_especialidade</title>
+        <toolsbar_1 type="toolsbar" xml-type="toolsbar" gen-type="menu" gen-group="">
+            <item type="specific" code="" rel="list" refresh_components="">
+                <title>List</title>
+                <app>sistema_de_clinica</app>
+                <page>Cm_t_especialidadeList</page>
+                <link>index</link>
+                <target>_self</target>
+                <img>default|fa-list</img>
+                <preview>../images/IGRP/IGRP2.3/app/sistema_de_clinica/cm_t_especialidadelist/Cm_t_especialidadeList.xml</preview>
+            </item>
+            <item type="specific" code="" rel="save" refresh_components="">
+                <title>Gravar</title>
+                <app>sistema_de_clinica</app>
+                <page>Cm_t_especialidadeForm</page>
+                <link>index</link>
+                <target>submit</target>
+                <img>primary|fa-save</img>
+                <preview>../images/IGRP/IGRP2.3/app/sistema_de_clinica/cm_t_especialidadeform/Cm_t_especialidadeForm.xml</preview>
+            </item>
+        </toolsbar_1>
+        <form_1 type="form" xml-type="form" title="Registar Especialidade" gen-type="container" gen-group="">
+            <fields>
+                <hidden name="p_id" type="hidden" java-type="Integer" maxlength="250" tooltip="false" disable_copy_paste="false" tag="id"/>
+                <nome name="p_nome" type="text" maxlength="200" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" desclabel="false" inputmask="" right="false" tooltip="false" disable_copy_paste="false">
+                    <label>Nome</label>
+                    <value>Mollit iste unde deserunt consectetur</value>
+                </nome>
+                <estado name="p_estado" type="select" multiple="false" tags="false" load_service_data="false" domain="ESTADO « sistema_de_clinica" maxlength="3" required="false" change="false" disabled="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
+                    <label>Estado</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>ATIVO</text>
+                            <value>A</value>
+                        </option>
+                        <option>
+                            <text>INACTIVO</text>
+                            <value>I</value>
+                        </option>
+                    </list>
+                </estado>
+            </fields>
+        </form_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>
