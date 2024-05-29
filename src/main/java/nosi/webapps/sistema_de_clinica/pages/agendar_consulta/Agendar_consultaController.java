@@ -7,11 +7,15 @@ import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
+import nosi.webapps.sistema_de_clinica.dao.CmTAgendamento;
 import nosi.webapps.sistema_de_clinica.dao.CmTEspecialMedico;
 import nosi.webapps.sistema_de_clinica.helper.Utils;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 /*----#end-code----*/
 		
 public class Agendar_consultaController extends Controller {
@@ -22,41 +26,23 @@ public class Agendar_consultaController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadFormlist_1(Core.query(null,"SELECT 'Sit doloremque dolor consectetur doloremque' as medico,'Labore laudantium amet unde omnis' as especialidade,'Iste unde amet totam accusantium' as hora_inicio,'Voluptatem doloremque mollit anim ut' as hora_fim_,'1' as selecionar "));
+		model.loadLista_de_consulta(Core.query(null,"SELECT 'Lorem mollit ut totam dolor to' as data_de_agendamento,'Adipiscing rem dolor amet pers' as hora_inicio_1,'Dolor magna stract sit iste st' as hora_fim,'1' as selecionar,'hidden-cd62_a6bb' as id_medico "));
 		view.especialidade_medica.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		view.medico_com_especialidade.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		  ----#gen-example */
 		/* Start-Code-Block (index) *//* End-Code-Block (index) */
 		/*----#start-code(index)----*/
-
 		// Configuração inicial para carregar especialidades
 		view.especialidade_medica.setListOptions(Utils.getEspecialidade());
-
-		/*view.especialidade_medica.setQuery(Core.query(Core.defaultConnection(), "SELECT id, nome FROM cm_t_especialidade WHERE estado = 'A'"), "---Selecionar---");
-
-		String especialidadeID = view.especialidade_medica.getValue().toString();
-
-		if (!especialidadeID.equals("---Selecionar---")){
-			try {
-				// Construir a consulta SQL para buscar médicos pela especialidade selecionada
-				String sql = "SELECT especialidade.*, medico.*" +
-						"FROM cm_t_especialidade especialidade" +
-						"JOIN cm_t_especial_medico em ON especialidade.id = em.especialidade_id" +
-						"JOIN cm_t_medico medico ON em.medico_id = medico.id";
-
-				// Executar a consulta e atualizar o segundo select
-				view.medico_com_especialidade.setQuery(Core.query(Core.defaultConnection(), sql), "---Selecionar---");
-			}catch (Exception e){
-				Core.setMessageError(""+e);
-			}
-		}*/
-
+		
 		/*----#end-code----*/
 		view.setModel(model);
 		return this.renderView(view);	
 	}
 	/* Start-Code-Block (custom-actions)  *//* End-Code-Block  */
 /*----#start-code(custom_actions)----*/
+	/* Esses metodos sao para programar o Remote Combo Box (Regra de Rules) Essas regra estao na pagina Agendar Consulta nos Select*/
+
 	public Response actionFindMedico() throws IOException, IllegalArgumentException, IllegalAccessException{
 		// Cria uma nova instância da view Agendar_consultaView
 		Agendar_consultaView view = new Agendar_consultaView();
@@ -83,6 +69,53 @@ public class Agendar_consultaController extends Controller {
 		// Retorna a resposta renderizada com o XML gerado
 		return this.renderView(xml);
 	}
+
+
+	public Response actionFindList() throws IOException, IllegalArgumentException, IllegalAccessException {
+
+		// Cria uma instância do modelo Agendar_consulta
+		Agendar_consulta model = new Agendar_consulta();
+		// Carrega os dados do modelo
+		model.load();
+
+		// Cria uma nova instância da view Agendar_consultaView
+		Agendar_consultaView view = new Agendar_consultaView();
+
+		// Busca a lista de agendamentos com base no ID da especialidade médica selecionada na view
+		List<CmTAgendamento> agendamentoList = new CmTAgendamento().find()
+				.andWhere("cmEspMedId.id", "=",
+						// Obtém o ID da especialidade médica selecionada na view
+						Core.getParamInt(view.medico_com_especialidade.getParamTag()))
+				.all();
+
+		// Cria uma lista para armazenar os dados formatados para exibição na view
+		List<Agendar_consulta.Lista_de_consulta> tableList = new ArrayList<>();
+
+		// Verifica se a lista de agendamentos não é nula e não está vazia
+		if (agendamentoList != null && !agendamentoList.isEmpty()) {
+			// Itera sobre cada agendamento encontrado
+			agendamentoList.forEach(d -> {
+				// Cria uma nova linha para a lista de consultas
+				Agendar_consulta.Lista_de_consulta row = new Agendar_consulta.Lista_de_consulta();
+				// Define os valores da linha com os dados do agendamento
+				row.setHora_fim(d.getHoraFim());
+				row.setHora_inicio_1(d.getHoraInicio());
+				row.setData_de_agendamento("" + d.getDataAgendamento());
+				row.setSelecionar(d.getCmEspMedId().getId());
+				row.setSelecionar_check(0);
+				// Adiciona a linha formatada à lista
+				tableList.add(row);
+			});
+		}
+
+		// Define a lista de consultas no modelo
+		model.setLista_de_consulta(tableList);
+		// Define o modelo na view
+		view.setModel(model);
+		// Renderiza a view com os dados do modelo e retorna a resposta
+		return this.renderView(view);
+	}
+
 
 	/*----#end-code----*/
 }
