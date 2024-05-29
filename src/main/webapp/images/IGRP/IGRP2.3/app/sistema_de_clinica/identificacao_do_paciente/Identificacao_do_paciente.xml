@@ -41,7 +41,7 @@
             <fields>
                 <nome name="p_nome" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" desclabel="false" inputmask="" right="false" tooltip="false" disable_copy_paste="false">
                     <label>Nome</label>
-                    <value>Omnis lorem adipiscing doloremque unde</value>
+                    <value>Amet officia sit stract laudantium</value>
                     <validations>
                         <validation>
                             <annotation>@NotNull</annotation>
@@ -50,7 +50,7 @@
                 </nome>
                 <data_nascimento name="p_data_nascimento" type="date" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" tooltip="false" disable_copy_paste="false" class="primary">
                     <label>Data Nascimento</label>
-                    <value>07-04-2017</value>
+                    <value>07-08-2011</value>
                     <validations>
                         <validation>
                             <annotation>@NotNull</annotation>
@@ -76,9 +76,9 @@
                         </validation>
                     </validations>
                 </tipo_documento_>
-                <numero_documento name="p_numero_documento" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
+                <numero_documento name="p_numero_documento" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" java-type="String" tooltip="false" disable_copy_paste="false">
                     <label>Numero Documento</label>
-                    <value>21</value>
+                    <value>11</value>
                     <validations>
                         <validation>
                             <annotation>@NotNull</annotation>
@@ -88,8 +88,8 @@
                 <informacao_adicional name="p_informacao_adicional" type="separator" maxlength="250" placeholder="" desclabel="false" right="false" tooltip="false" disable_copy_paste="false">
                     <label>Informacao Adicional</label>
                 </informacao_adicional>
-                <primeira_consulta_ name="p_primeira_consulta_" type="radiolist" domain="SIM_NAO « sistema_de_clinica" maxlength="250" required="false" change="false" readonly="false" disabled="false" child_size="1" right="false" java-type="" tooltip="false" disable_copy_paste="false">
-                    <label>Primeira Consulta? </label>
+                <primeira_consulta name="p_primeira_consulta" type="radiolist" domain="SIM_NAO « sistema_de_clinica" maxlength="250" required="false" change="false" readonly="false" disabled="false" child_size="1" right="false" java-type="" tooltip="false" disable_copy_paste="false">
+                    <label>Primeira Consulta?</label>
                     <list>
                         <option>
                             <text>Sim</text>
@@ -100,38 +100,19 @@
                             <value>N</value>
                         </option>
                     </list>
-                </primeira_consulta_>
+                </primeira_consulta>
                 <data_adicional name="p_data_adicional" type="date" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" tooltip="false" disable_copy_paste="false" class="primary">
                     <label>Data Ultima Consulta</label>
-                    <value>01-06-2015</value>
+                    <value>04-07-2014</value>
                 </data_adicional>
                 <nome_de_mae name="p_nome_de_mae" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" desclabel="false" inputmask="" right="false" tooltip="false" disable_copy_paste="false">
                     <label>Nome de Mãe</label>
-                    <value>Amet stract omnis anim laudantium</value>
+                    <value>Anim dolor doloremque stract perspiciatis</value>
                 </nome_de_mae>
                 <nome_de_pai name="p_nome_de_pai" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" desclabel="false" inputmask="" right="false" tooltip="false" disable_copy_paste="false">
                     <label>Nome de Pai</label>
-                    <value>Laudantium iste natus doloremque labore</value>
+                    <value>Omnis sit accusantium rem laudantium</value>
                 </nome_de_pai>
-                <tipo_documento name="p_tipo_documento" type="select" multiple="false" tags="false" load_service_data="false" domain="TP_DOCUMENTO « sistema_de_clinica" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
-                    <label>Tipo Documento</label>
-                    <list>
-                        <option/>
-                        <option>
-                            <text>Bilhete Entidade</text>
-                            <value>BI</value>
-                        </option>
-                        <option>
-                            <text>Cartão Nacional de Identificação</text>
-                            <value>CNI</value>
-                        </option>
-                    </list>
-                    <validations>
-                        <validation>
-                            <annotation>@NotNull</annotation>
-                        </validation>
-                    </validations>
-                </tipo_documento>
             </fields>
         </form_1>
     </content>

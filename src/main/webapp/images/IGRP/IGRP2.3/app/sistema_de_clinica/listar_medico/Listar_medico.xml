@@ -41,11 +41,11 @@
             <fields>
                 <nome name="p_nome" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="Nome do medico" desclabel="false" inputmask="" right="false" tooltip="false" disable_copy_paste="false">
                     <label>Nome</label>
-                    <value>Magna amet dolor mollit omnis</value>
+                    <value>Sit natus iste ut lorem</value>
                 </nome>
                 <numero_da_ordem_dos_medicos name="p_numero_da_ordem_dos_medicos" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="O número de registro do médico junto ao órgão regulador." desclabel="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
                     <label>Número da Ordem dos Médicos</label>
-                    <value>229</value>
+                    <value>236</value>
                 </numero_da_ordem_dos_medicos>
                 <estado name="p_estado" type="select" multiple="false" tags="false" load_service_data="false" domain="ESTADO « sistema_de_clinica" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
                     <label>Estado</label>
@@ -88,11 +88,11 @@
             <item type="specific" code="" rel="dashboard" refresh_components="">
                 <title>Dashboard</title>
                 <app>sistema_de_clinica</app>
-                <page>Listar_medico</page>
+                <page>Dashboard</page>
                 <link>index</link>
-                <target>modal</target>
+                <target>_newtab</target>
                 <img>primary|fa-dashboard</img>
-                <preview>../images/IGRP/IGRP2.3/app/sistema_de_clinica/listar_medico/Listar_medico.xml</preview>
+                <preview>../images/IGRP/IGRP2.3/app/sistema_de_clinica/dashboard/Dashboard.xml</preview>
             </item>
         </toolsbar_1>
         <table_1 type="table" xml-type="table" title="Listar Medico" gen-type="container" gen-group="true">
@@ -121,12 +121,24 @@
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <table_1_color_1 name="p_table_1_color_1">I</table_1_color_1>
+                        <table_1_color_1 name="p_table_1_color_1">A</table_1_color_1>
                         <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome_medico name="p_nome_medico">Sit deserunt perspiciatis aliqua doloremque</nome_medico>
-                        <contacto name="p_contacto">Omnis ipsum labore amet adipis</contacto>
-                        <numero name="p_numero">179</numero>
-                        <id_medico name="p_id_medico" tag="id_medico">hidden-3c19_3a18</id_medico>
+                        <nome_medico name="p_nome_medico">Omnis lorem iste adipiscing natus</nome_medico>
+                        <contacto name="p_contacto">Mollit lorem stract lorem adip</contacto>
+                        <numero name="p_numero">47</numero>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-2cb5_e915</id_medico>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <table_1_color_1 name="p_table_1_color_1">A</table_1_color_1>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome_medico name="p_nome_medico">Deserunt aperiam dolor adipiscing magna</nome_medico>
+                        <contacto name="p_contacto">Ut rem anim accusantium dolore</contacto>
+                        <numero name="p_numero">282</numero>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-08f5_0f88</id_medico>
                     </row>
                     <row>
                         <context-menu>
@@ -135,10 +147,22 @@
                         </context-menu>
                         <table_1_color_1 name="p_table_1_color_1">I</table_1_color_1>
                         <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome_medico name="p_nome_medico">Accusantium labore iste consectetur deserunt</nome_medico>
-                        <contacto name="p_contacto">Voluptatem adipiscing lorem vo</contacto>
-                        <numero name="p_numero">163</numero>
-                        <id_medico name="p_id_medico" tag="id_medico">hidden-f35e_6f6f</id_medico>
+                        <nome_medico name="p_nome_medico">Aperiam ipsum doloremque labore perspiciatis</nome_medico>
+                        <contacto name="p_contacto">Sed rem laudantium dolor iste</contacto>
+                        <numero name="p_numero">297</numero>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-5780_fb78</id_medico>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <table_1_color_1 name="p_table_1_color_1">A</table_1_color_1>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome_medico name="p_nome_medico">Aliqua ut unde anim unde</nome_medico>
+                        <contacto name="p_contacto">Sit accusantium natus rem labo</contacto>
+                        <numero name="p_numero">243</numero>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-edc8_3a1c</id_medico>
                     </row>
                     <row>
                         <context-menu>
@@ -147,34 +171,10 @@
                         </context-menu>
                         <table_1_color_1 name="p_table_1_color_1">I</table_1_color_1>
                         <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome_medico name="p_nome_medico">Ut ipsum stract accusantium sit</nome_medico>
-                        <contacto name="p_contacto">Unde lorem amet adipiscing mag</contacto>
-                        <numero name="p_numero">18</numero>
-                        <id_medico name="p_id_medico" tag="id_medico">hidden-1859_7f05</id_medico>
-                    </row>
-                    <row>
-                        <context-menu>
-                            <param>p1=linha1</param>
-                            <param>p2=linha1</param>
-                        </context-menu>
-                        <table_1_color_1 name="p_table_1_color_1">I</table_1_color_1>
-                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome_medico name="p_nome_medico">Doloremque sit perspiciatis dolor totam</nome_medico>
-                        <contacto name="p_contacto">Aliqua adipiscing sed natus ac</contacto>
-                        <numero name="p_numero">207</numero>
-                        <id_medico name="p_id_medico" tag="id_medico">hidden-97d4_cee1</id_medico>
-                    </row>
-                    <row>
-                        <context-menu>
-                            <param>p1=linha1</param>
-                            <param>p2=linha1</param>
-                        </context-menu>
-                        <table_1_color_1 name="p_table_1_color_1">I</table_1_color_1>
-                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome_medico name="p_nome_medico">Ut mollit perspiciatis sit totam</nome_medico>
-                        <contacto name="p_contacto">Dolor accusantium lorem iste d</contacto>
-                        <numero name="p_numero">266</numero>
-                        <id_medico name="p_id_medico" tag="id_medico">hidden-6451_47a8</id_medico>
+                        <nome_medico name="p_nome_medico">Magna unde sit aperiam unde</nome_medico>
+                        <contacto name="p_contacto">Lorem voluptatem sit laudantiu</contacto>
+                        <numero name="p_numero">50</numero>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-8a98_52be</id_medico>
                     </row>
                 </value>
                 <legend_color>
@@ -233,7 +233,6 @@
                 </context-menu>
             </table>
         </table_1>
-        <toolsbar_2 type="toolsbar" xml-type="toolsbar" gen-type="menu" gen-group=""/>
     </content>
     <blockly>
         <imports></imports>

@@ -39,16 +39,7 @@
         <title>Agendar Consulta</title>
         <form_1 type="form" xml-type="form" title=" Agendar Consulta" gen-type="container" gen-group="">
             <fields>
-                <data name="p_data" type="date" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" tooltip="false" disable_copy_paste="false" class="primary">
-                    <label>Data</label>
-                    <value>08-04-2014</value>
-                    <validations>
-                        <validation>
-                            <annotation>@NotNull</annotation>
-                        </validation>
-                    </validations>
-                </data>
-                <especialidade_medica name="p_especialidade_medica" type="select" multiple="false" tags="false" load_service_data="false" domain="" maxlength="250" required="false" change="true" disabled="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
+                <especialidade_medica name="p_especialidade_medica" type="select" multiple="false" tags="false" load_service_data="false" domain="" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
                     <label>Especialidade Medica</label>
                     <list>
                         <option/>
@@ -102,94 +93,70 @@
                 </medico_com_especialidade>
             </fields>
         </form_1>
-        <formlist_1 type="formlist" xml-type="formlist" gen-clean="true" gen-type="container" gen-group="true">
+        <lista_de_consulta type="table" xml-type="table" title="Lista de Consulta" gen-type="container" gen-group="true">
             <fields>
-                <medico name="p_medico" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" right="false" desc="true">
-                    <label>Medico</label>
-                </medico>
-                <especialidade name="p_especialidade" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" right="false" desc="true">
-                    <label>Especialidade</label>
-                </especialidade>
-                <hora_inicio name="p_hora_inicio" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" right="false" desc="true">
+                <data_de_agendamento name="p_data_de_agendamento" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Data de Agendamento</label>
+                </data_de_agendamento>
+                <hora_inicio_1 name="p_hora_inicio_1" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
                     <label>Hora inicio</label>
-                </hora_inicio>
-                <hora_fim_ name="p_hora_fim_" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" right="false" desc="true">
-                    <label>Hora Fim </label>
-                </hora_fim_>
-                <selecionar name="p_selecionar" type="checkbox" maxlength="250" required="false" change="false" readonly="false" disabled="false" right="false" java-type="int" check="true" desc="true">
+                </hora_inicio_1>
+                <hora_fim name="p_hora_fim" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Hora Fim</label>
+                </hora_fim>
+                <selecionar name="p_selecionar" type="checkbox" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="" java-type="int" switch="true" check="true" desc="true">
                     <label>Selecionar</label>
                 </selecionar>
+                <id_medico name="p_id_medico" type="hidden" maxlength="30" showLabel="true" iskey="false" group_in="" java-type="" tag="id_medico"/>
             </fields>
             <table>
                 <value>
                     <row>
-                        <medico name="p_medico" desc="true">Doloremque dolor laudantium amet anim</medico>
-                        <medico_check name="p_medico_check">Doloremque dolor laudantium amet anim</medico_check>
-                        <especialidade name="p_especialidade" desc="true">Lorem sed iste adipiscing aperiam</especialidade>
-                        <especialidade_check name="p_especialidade_check">Lorem sed iste adipiscing aperiam</especialidade_check>
-                        <hora_inicio name="p_hora_inicio" desc="true">Amet natus accusantium rem anim</hora_inicio>
-                        <hora_inicio_check name="p_hora_inicio_check">Amet natus accusantium rem anim</hora_inicio_check>
-                        <hora_fim_ name="p_hora_fim_" desc="true">Iste mollit doloremque sit anim</hora_fim_>
-                        <hora_fim__check name="p_hora_fim__check">Iste mollit doloremque sit anim</hora_fim__check>
+                        <data_de_agendamento name="p_data_de_agendamento">Ipsum stract accusantium aperi</data_de_agendamento>
+                        <hora_inicio_1 name="p_hora_inicio_1">Unde natus totam consectetur n</hora_inicio_1>
+                        <hora_fim name="p_hora_fim">Aperiam ut aperiam sit dolorem</hora_fim>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-4682_0ac0</id_medico>
                     </row>
                     <row>
-                        <medico name="p_medico" desc="true">Anim stract deserunt elit ipsum</medico>
-                        <medico_check name="p_medico_check">Anim stract deserunt elit ipsum</medico_check>
-                        <especialidade name="p_especialidade" desc="true">Deserunt perspiciatis officia accusantium amet</especialidade>
-                        <especialidade_check name="p_especialidade_check">Deserunt perspiciatis officia accusantium amet</especialidade_check>
-                        <hora_inicio name="p_hora_inicio" desc="true">Amet mollit officia ipsum ut</hora_inicio>
-                        <hora_inicio_check name="p_hora_inicio_check">Amet mollit officia ipsum ut</hora_inicio_check>
-                        <hora_fim_ name="p_hora_fim_" desc="true">Deserunt perspiciatis voluptatem aperiam mollit</hora_fim_>
-                        <hora_fim__check name="p_hora_fim__check">Deserunt perspiciatis voluptatem aperiam mollit</hora_fim__check>
+                        <data_de_agendamento name="p_data_de_agendamento">Consectetur sit lorem aperiam</data_de_agendamento>
+                        <hora_inicio_1 name="p_hora_inicio_1">Iste ipsum laudantium officia</hora_inicio_1>
+                        <hora_fim name="p_hora_fim">Elit sit voluptatem lorem stra</hora_fim>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-5c6d_8c68</id_medico>
                     </row>
                     <row>
-                        <medico name="p_medico" desc="true">Sit perspiciatis ut laudantium officia</medico>
-                        <medico_check name="p_medico_check">Sit perspiciatis ut laudantium officia</medico_check>
-                        <especialidade name="p_especialidade" desc="true">Voluptatem ipsum amet sed laudantium</especialidade>
-                        <especialidade_check name="p_especialidade_check">Voluptatem ipsum amet sed laudantium</especialidade_check>
-                        <hora_inicio name="p_hora_inicio" desc="true">Dolor stract accusantium adipiscing consectetur</hora_inicio>
-                        <hora_inicio_check name="p_hora_inicio_check">Dolor stract accusantium adipiscing consectetur</hora_inicio_check>
-                        <hora_fim_ name="p_hora_fim_" desc="true">Totam unde totam amet labore</hora_fim_>
-                        <hora_fim__check name="p_hora_fim__check">Totam unde totam amet labore</hora_fim__check>
+                        <data_de_agendamento name="p_data_de_agendamento">Accusantium unde adipiscing pe</data_de_agendamento>
+                        <hora_inicio_1 name="p_hora_inicio_1">Mollit omnis sit lorem rem lor</hora_inicio_1>
+                        <hora_fim name="p_hora_fim">Voluptatem adipiscing accusant</hora_fim>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-a69d_6d3a</id_medico>
                     </row>
                     <row>
-                        <medico name="p_medico" desc="true">Amet labore stract aliqua voluptatem</medico>
-                        <medico_check name="p_medico_check">Amet labore stract aliqua voluptatem</medico_check>
-                        <especialidade name="p_especialidade" desc="true">Consectetur officia voluptatem natus lorem</especialidade>
-                        <especialidade_check name="p_especialidade_check">Consectetur officia voluptatem natus lorem</especialidade_check>
-                        <hora_inicio name="p_hora_inicio" desc="true">Laudantium ipsum adipiscing elit ipsum</hora_inicio>
-                        <hora_inicio_check name="p_hora_inicio_check">Laudantium ipsum adipiscing elit ipsum</hora_inicio_check>
-                        <hora_fim_ name="p_hora_fim_" desc="true">Unde doloremque stract consectetur doloremque</hora_fim_>
-                        <hora_fim__check name="p_hora_fim__check">Unde doloremque stract consectetur doloremque</hora_fim__check>
+                        <data_de_agendamento name="p_data_de_agendamento">Unde perspiciatis officia sit</data_de_agendamento>
+                        <hora_inicio_1 name="p_hora_inicio_1">Anim elit perspiciatis consect</hora_inicio_1>
+                        <hora_fim name="p_hora_fim">Consectetur mollit magna sit l</hora_fim>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-ac01_23fb</id_medico>
                     </row>
                     <row>
-                        <medico name="p_medico" desc="true">Stract doloremque voluptatem amet aperiam</medico>
-                        <medico_check name="p_medico_check">Stract doloremque voluptatem amet aperiam</medico_check>
-                        <especialidade name="p_especialidade" desc="true">Iste omnis sit voluptatem sed</especialidade>
-                        <especialidade_check name="p_especialidade_check">Iste omnis sit voluptatem sed</especialidade_check>
-                        <hora_inicio name="p_hora_inicio" desc="true">Aperiam sit ut ipsum consectetur</hora_inicio>
-                        <hora_inicio_check name="p_hora_inicio_check">Aperiam sit ut ipsum consectetur</hora_inicio_check>
-                        <hora_fim_ name="p_hora_fim_" desc="true">Magna aliqua laudantium elit doloremque</hora_fim_>
-                        <hora_fim__check name="p_hora_fim__check">Magna aliqua laudantium elit doloremque</hora_fim__check>
+                        <data_de_agendamento name="p_data_de_agendamento">Perspiciatis anim consectetur</data_de_agendamento>
+                        <hora_inicio_1 name="p_hora_inicio_1">Adipiscing doloremque unde lor</hora_inicio_1>
+                        <hora_fim name="p_hora_fim">Sit natus sit dolor sit unde a</hora_fim>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-343c_5af2</id_medico>
                     </row>
                 </value>
             </table>
-        </formlist_1>
+        </lista_de_consulta>
     </content>
     <blockly>
         <imports></imports>
-        <xml>
-            <block type="controller" id="controller" x="388" y="13"></block>
-        </xml>
+        <xml></xml>
     </blockly>
 </rows>
