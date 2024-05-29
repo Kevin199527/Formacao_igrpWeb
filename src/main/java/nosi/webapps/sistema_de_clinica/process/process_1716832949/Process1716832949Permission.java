@@ -4,8 +4,8 @@ import nosi.core.webapp.bpmn.TaskPermissionInterface;
 import nosi.webapps.igrp.dao.ActivityExecute;
 
 /**
- * demo@nosi.cv
- * 27-05-2024
+ * kevinlily.cv@gmail.com
+ * 29-05-2024
  */
 public class Process1716832949Permission implements TaskPermissionInterface {
 

@@ -21,13 +21,13 @@ public class Identificacao_do_paciente extends Model{
 
 	@NotNull()
 	@RParam(rParamName = "p_numero_documento")
-	private Integer numero_documento;
+	private String numero_documento;
 
 	@RParam(rParamName = "p_informacao_adicional")
 	private String informacao_adicional;
 
-	@RParam(rParamName = "p_primeira_consulta_")
-	private Integer primeira_consulta_;
+	@RParam(rParamName = "p_primeira_consulta")
+	private Integer primeira_consulta;
 
 	@RParam(rParamName = "p_data_adicional")
 	private String data_adicional;
@@ -37,10 +37,6 @@ public class Identificacao_do_paciente extends Model{
 
 	@RParam(rParamName = "p_nome_de_pai")
 	private String nome_de_pai;
-
-	@NotNull()
-	@RParam(rParamName = "p_tipo_documento")
-	private String tipo_documento;
 	
 	public void setNome(String nome){
 		this.nome = nome;
@@ -63,10 +59,10 @@ public class Identificacao_do_paciente extends Model{
 		return this.tipo_documento_;
 	}
 	
-	public void setNumero_documento(Integer numero_documento){
+	public void setNumero_documento(String numero_documento){
 		this.numero_documento = numero_documento;
 	}
-	public Integer getNumero_documento(){
+	public String getNumero_documento(){
 		return this.numero_documento;
 	}
 	
@@ -77,11 +73,11 @@ public class Identificacao_do_paciente extends Model{
 		return this.informacao_adicional;
 	}
 	
-	public void setPrimeira_consulta_(Integer primeira_consulta_){
-		this.primeira_consulta_ = primeira_consulta_;
+	public void setPrimeira_consulta(Integer primeira_consulta){
+		this.primeira_consulta = primeira_consulta;
 	}
-	public Integer getPrimeira_consulta_(){
-		return this.primeira_consulta_;
+	public Integer getPrimeira_consulta(){
+		return this.primeira_consulta;
 	}
 	
 	public void setData_adicional(String data_adicional){
@@ -103,13 +99,6 @@ public class Identificacao_do_paciente extends Model{
 	}
 	public String getNome_de_pai(){
 		return this.nome_de_pai;
-	}
-	
-	public void setTipo_documento(String tipo_documento){
-		this.tipo_documento = tipo_documento;
-	}
-	public String getTipo_documento(){
-		return this.tipo_documento;
 	}
 
 

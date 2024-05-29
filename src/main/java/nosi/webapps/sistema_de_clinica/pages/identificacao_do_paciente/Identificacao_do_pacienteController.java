@@ -17,8 +17,7 @@ public class Identificacao_do_pacienteController extends Controller {
 		model.load();
 		var view = new Identificacao_do_pacienteView();
 		view.tipo_documento_.loadDomain("TP_DOCUMENTO","sistema_de_clinica","-- Selecionar --");
-		view.primeira_consulta_.loadDomainByApp("SIM_NAO","sistema_de_clinica");
-		view.tipo_documento.loadDomain("TP_DOCUMENTO","sistema_de_clinica","-- Selecionar --");
+		view.primeira_consulta.loadDomainByApp("SIM_NAO","sistema_de_clinica");
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.

@@ -24,7 +24,7 @@ import jakarta.ws.rs.core.Response;
 
 
 /**
- * //@author: Emanuel Pereira
+ * @author: Emanuel Pereira
  * 26 Sep 2017
  * //@param <T>
  */
@@ -72,23 +72,28 @@ public class RestRequest{
     }
 
     public Response get(String url) {
-        return this.get(url, Response.class);
-    }
-
-    public <T> T get(String url, Class<T> responseType) {
-        try {
-            Client client = this.getConfig().bluidClient();
-            this.addUrl(url);
-            WebTarget target = client.target(this.getConfig().getUrl());
-            T response = target.request(this.getAccept_format())
-                    .cacheControl(cacheControl)
-                    .get(responseType);
-            client.close();
-            return response;
-        }catch(Exception e){
+        try{
+            return this.get(url, Response.class);
+        } catch(Exception e){
             e.printStackTrace();
         }
         return null;
+    }
+
+    public <T> T get(String url, Class<T> responseType) throws Exception {
+        //try {
+        Client client = this.getConfig().bluidClient();
+        this.addUrl(url);
+        WebTarget target = client.target(this.getConfig().getUrl());
+        T response = target.request(this.getAccept_format())
+                .cacheControl(cacheControl)
+                .get(responseType);
+        client.close();
+        return response;
+		/*}catch(Exception e){
+			e.printStackTrace();
+		}
+		return null;*/
     }
 
     public Response post(String url, Part file, String fileExtension) throws IOException {
@@ -175,6 +180,7 @@ public class RestRequest{
             e.printStackTrace();
         }
         return null;
+
     }
 
     public Response post(String url, String content,Object id) {

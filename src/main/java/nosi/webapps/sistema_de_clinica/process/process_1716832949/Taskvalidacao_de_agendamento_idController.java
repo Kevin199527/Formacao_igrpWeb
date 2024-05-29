@@ -17,7 +17,7 @@ import nosi.webapps.sistema_de_clinica.pages.validacao.ValidacaoView;//
 
 /**
  *kevinlily.cv@gmail.com
- *28-05-2024
+ *29-05-2024
 */
 
 public class Taskvalidacao_de_agendamento_idController extends BPMNTaskController {
@@ -28,6 +28,7 @@ public class Taskvalidacao_de_agendamento_idController extends BPMNTaskControlle
 		model.load();
 
 		/*----#start-code(index)----*/
+		view.decisao.loadDomain("DECISAO_ATENDEDOR","sistema_de_clinica","-- Selecionar --");
 
 		/*----#end-code----*/
 

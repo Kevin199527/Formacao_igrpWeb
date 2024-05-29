@@ -23,7 +23,6 @@ public class Listar_medicoView extends View {
 	public IGRPTable table_1;
 
 	public IGRPToolsBar toolsbar_1;
-	public IGRPToolsBar toolsbar_2;
 	public IGRPButton btn_novo_1;
 	public IGRPButton btn_dashboard;
 	public IGRPButton btn_pesquisar;
@@ -79,12 +78,11 @@ public class Listar_medicoView extends View {
 		
 
 		toolsbar_1 = new IGRPToolsBar("toolsbar_1");
-		toolsbar_2 = new IGRPToolsBar("toolsbar_2");
 
 		btn_novo_1 = new IGRPButton("Novo","sistema_de_clinica","Listar_medico","novo_1","modal|refresh","success|fa-plus","","");
 		btn_novo_1.propertie.add("type","specific").add("rel","novo_1").add("refresh_components","");
 
-		btn_dashboard = new IGRPButton("Dashboard","sistema_de_clinica","Listar_medico","dashboard","modal","primary|fa-dashboard","","");
+		btn_dashboard = new IGRPButton("Dashboard","sistema_de_clinica","Listar_medico","dashboard","_newtab","primary|fa-dashboard","","");
 		btn_dashboard.propertie.add("type","specific").add("rel","dashboard").add("refresh_components","");
 
 		btn_pesquisar = new IGRPButton("Pesquisar","sistema_de_clinica","Listar_medico","pesquisar","submit","grey|fa-search","","");
@@ -129,7 +127,6 @@ public class Listar_medicoView extends View {
 		table_1_colors.put("A",color_95c11f_table_1);
 		this.table_1.setLegendColors(table_1_colors);
 		/* end table_1 legend colors*/
-
 		toolsbar_1.addButton(btn_novo_1);
 		toolsbar_1.addButton(btn_dashboard);
 		form_1.addButton(btn_pesquisar);
@@ -140,7 +137,6 @@ public class Listar_medicoView extends View {
 		this.addToPage(form_1);
 		this.addToPage(table_1);
 		this.addToPage(toolsbar_1);
-		this.addToPage(toolsbar_2);
 	}
 		
 	@Override

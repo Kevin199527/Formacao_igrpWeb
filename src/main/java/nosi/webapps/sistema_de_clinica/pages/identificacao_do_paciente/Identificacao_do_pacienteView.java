@@ -13,11 +13,10 @@ public class Identificacao_do_pacienteView extends View {
 	public Field tipo_documento_;
 	public Field numero_documento;
 	public Field informacao_adicional;
-	public Field primeira_consulta_;
+	public Field primeira_consulta;
 	public Field data_adicional;
 	public Field nome_de_mae;
 	public Field nome_de_pai;
-	public Field tipo_documento;
 	public IGRPForm form_1;
 
 
@@ -41,15 +40,15 @@ public class Identificacao_do_pacienteView extends View {
 		
 		numero_documento = new NumberField(model,"numero_documento");
 		numero_documento.setLabel(gt("Numero Documento"));
-		numero_documento.propertie().add("name","p_numero_documento").add("type","number").add("min","").add("max","").add("calculation","false").add("mathcal","").add("numberformat","").add("maxlength","250").add("required","true").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false").add("java-type","").add("tooltip","false").add("disable_copy_paste","false");
+		numero_documento.propertie().add("name","p_numero_documento").add("type","number").add("min","").add("max","").add("calculation","false").add("mathcal","").add("numberformat","").add("maxlength","250").add("required","true").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false").add("java-type","String").add("tooltip","false").add("disable_copy_paste","false");
 		
 		informacao_adicional = new SeparatorField(model,"informacao_adicional");
 		informacao_adicional.setLabel(gt("Informacao Adicional"));
 		informacao_adicional.propertie().add("name","p_informacao_adicional").add("type","separator").add("maxlength","250").add("placeholder",gt("")).add("desclabel","false").add("tooltip","false").add("disable_copy_paste","false");
 		
-		primeira_consulta_ = new RadioListField(model,"primeira_consulta_");
-		primeira_consulta_.setLabel(gt("Primeira Consulta? "));
-		primeira_consulta_.propertie().add("name","p_primeira_consulta_").add("type","radiolist").add("domain","SIM_NAO « sistema_de_clinica").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("child_size","1").add("java-type","").add("tooltip","false").add("disable_copy_paste","false");
+		primeira_consulta = new RadioListField(model,"primeira_consulta");
+		primeira_consulta.setLabel(gt("Primeira Consulta?"));
+		primeira_consulta.propertie().add("name","p_primeira_consulta").add("type","radiolist").add("domain","SIM_NAO « sistema_de_clinica").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("child_size","1").add("java-type","").add("tooltip","false").add("disable_copy_paste","false");
 		
 		data_adicional = new DateField(model,"data_adicional");
 		data_adicional.setLabel(gt("Data Ultima Consulta"));
@@ -62,10 +61,6 @@ public class Identificacao_do_pacienteView extends View {
 		nome_de_pai = new TextField(model,"nome_de_pai");
 		nome_de_pai.setLabel(gt("Nome de Pai"));
 		nome_de_pai.propertie().add("name","p_nome_de_pai").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("desclabel","false").add("inputmask","").add("tooltip","false").add("disable_copy_paste","false");
-		
-		tipo_documento = new ListField(model,"tipo_documento");
-		tipo_documento.setLabel(gt("Tipo Documento"));
-		tipo_documento.propertie().add("name","p_tipo_documento").add("type","select").add("multiple","false").add("tags","false").add("load_service_data","false").add("domain","TP_DOCUMENTO « sistema_de_clinica").add("maxlength","250").add("required","true").add("disabled","false").add("java-type","").add("tooltip","false").add("disable_copy_paste","false");
 		
 
 
@@ -80,11 +75,10 @@ public class Identificacao_do_pacienteView extends View {
 		form_1.addField(tipo_documento_);
 		form_1.addField(numero_documento);
 		form_1.addField(informacao_adicional);
-		form_1.addField(primeira_consulta_);
+		form_1.addField(primeira_consulta);
 		form_1.addField(data_adicional);
 		form_1.addField(nome_de_mae);
 		form_1.addField(nome_de_pai);
-		form_1.addField(tipo_documento);
 
 		this.addToPage(form_1);
 	}
@@ -97,11 +91,10 @@ public class Identificacao_do_pacienteView extends View {
 		tipo_documento_.setValue(model);
 		numero_documento.setValue(model);
 		informacao_adicional.setValue(model);
-		primeira_consulta_.setValue(model);
+		primeira_consulta.setValue(model);
 		data_adicional.setValue(model);
 		nome_de_mae.setValue(model);
-		nome_de_pai.setValue(model);
-		tipo_documento.setValue(model);	
+		nome_de_pai.setValue(model);	
 
 		}
 }

@@ -25,7 +25,7 @@ public class Listar_medicoController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT 'A' as table_1_color_1,'../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Amet accusantium iste laudantium natus' as nome_medico,'Laudantium aliqua anim mollit' as contacto,'27' as numero,'hidden-6cf2_5f9b' as id_medico "));
+		model.loadTable_1(Core.query(null,"SELECT 'A' as table_1_color_1,'../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Adipiscing deserunt doloremque magna sed' as nome_medico,'Aperiam totam anim totam dolor' as contacto,'226' as numero,'hidden-b30b_30d6' as id_medico "));
 		  ----#gen-example */
 		/* Start-Code-Block (index) *//* End-Code-Block (index) */
 		/*----#start-code(index)----*/
@@ -97,7 +97,7 @@ public class Listar_medicoController extends Controller {
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
 		  this.addQueryString("p_id","12"); //to send a query string in the URL
 		  this.addQueryString("p_id_medico",Core.getParam("p_id_medico"));
-		  return this.forward("sistema_de_clinica","Listar_medico","index",this.queryString()); //if submit, loads the values
+		  return this.forward("sistema_de_clinica","Dashboard","index",this.queryString()); //if submit, loads the values
 		  Use model.validate() to validate your model
 		  ----#gen-example */
 		/* Start-Code-Block (dashboard)  *//* End-Code-Block  */
@@ -105,7 +105,7 @@ public class Listar_medicoController extends Controller {
 		
 		
 		/*----#end-code----*/
-		return this.redirect("sistema_de_clinica","Listar_medico","index", this.queryString());	
+		return this.redirect("sistema_de_clinica","Dashboard","index", this.queryString());	
 	}
 	
 	public Response actionPesquisar() throws IOException, IllegalArgumentException, IllegalAccessException{

@@ -17,7 +17,7 @@ import nosi.webapps.sistema_de_clinica.pages.identificacao_do_paciente.Identific
 
 /**
  *kevinlily.cv@gmail.com
- *28-05-2024
+ *29-05-2024
 */
 
 public class Taskidentificacao_do_paciente_idController extends BPMNTaskController {
@@ -28,6 +28,8 @@ public class Taskidentificacao_do_paciente_idController extends BPMNTaskControll
 		model.load();
 
 		/*----#start-code(index)----*/
+		view.tipo_documento_.loadDomain("TP_DOCUMENTO","sistema_de_clinica","-- Selecionar --");
+		view.primeira_consulta.loadDomainByApp("SIM_NAO","sistema_de_clinica");
 
 		/*----#end-code----*/
 

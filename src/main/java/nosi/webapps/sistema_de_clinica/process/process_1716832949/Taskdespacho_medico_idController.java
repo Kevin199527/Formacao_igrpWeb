@@ -17,7 +17,7 @@ import nosi.webapps.sistema_de_clinica.pages.despacho.DespachoView;//
 
 /**
  *kevinlily.cv@gmail.com
- *28-05-2024
+ *29-05-2024
 */
 
 public class Taskdespacho_medico_idController extends BPMNTaskController {
@@ -28,7 +28,7 @@ public class Taskdespacho_medico_idController extends BPMNTaskController {
 		model.load();
 
 		/*----#start-code(index)----*/
-
+		view.parecer.loadDomain("PARECER_MEDICO","sistema_de_clinica","-- Selecionar --");
 		/*----#end-code----*/
 
 		return super.index("sistema_de_clinica",model,view,this);
