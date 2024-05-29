@@ -7,6 +7,11 @@ import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
+import nosi.webapps.sistema_de_clinica.dao.CmTEspecialMedico;
+import nosi.webapps.sistema_de_clinica.helper.Utils;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 /*----#end-code----*/
 		
 public class Agendar_consultaController extends Controller {
@@ -17,14 +22,17 @@ public class Agendar_consultaController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadFormlist_1(Core.query(null,"SELECT 'Ipsum laudantium perspiciatis sit amet' as medico,'Officia anim officia unde aperiam' as especialidade,'Magna sit aliqua ipsum iste' as hora_inicio,'Accusantium aperiam natus stract ut' as hora_fim_,'1' as selecionar "));
+		model.loadFormlist_1(Core.query(null,"SELECT 'Sit doloremque dolor consectetur doloremque' as medico,'Labore laudantium amet unde omnis' as especialidade,'Iste unde amet totam accusantium' as hora_inicio,'Voluptatem doloremque mollit anim ut' as hora_fim_,'1' as selecionar "));
 		view.especialidade_medica.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		view.medico_com_especialidade.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		  ----#gen-example */
 		/* Start-Code-Block (index) *//* End-Code-Block (index) */
 		/*----#start-code(index)----*/
-		/*// Configuração inicial para carregar especialidades
-		view.especialidade_medica.setQuery(Core.query(Core.defaultConnection(), "SELECT id, nome FROM cm_t_especialidade WHERE estado = 'A'"), "---Selecionar---");
+
+		// Configuração inicial para carregar especialidades
+		view.especialidade_medica.setListOptions(Utils.getEspecialidade());
+
+		/*view.especialidade_medica.setQuery(Core.query(Core.defaultConnection(), "SELECT id, nome FROM cm_t_especialidade WHERE estado = 'A'"), "---Selecionar---");
 
 		String especialidadeID = view.especialidade_medica.getValue().toString();
 
@@ -49,7 +57,32 @@ public class Agendar_consultaController extends Controller {
 	}
 	/* Start-Code-Block (custom-actions)  *//* End-Code-Block  */
 /*----#start-code(custom_actions)----*/
+	public Response actionFindMedico() throws IOException, IllegalArgumentException, IllegalAccessException{
+		// Cria uma nova instância da view Agendar_consultaView
+		Agendar_consultaView view = new Agendar_consultaView();
 
+		// Busca a lista de especialidades médicas baseadas no ID da especialidade selecionada na view
+		List<CmTEspecialMedico> cmTEspecialMedicoList = new CmTEspecialMedico().find()
+				.andWhere("especialidadeId.id", "=",
+						Core.getParamInt(view.especialidade_medica.getParamTag())) // Obtém o ID da especialidade médica selecionada na view
+				.all();
 
-/*----#end-code----*/
+		// Cria um mapa para armazenar os IDs dos médicos e seus nomes
+		Map<Integer, String> _map = new HashMap<>();
+
+		// Verifica se a lista de especialidades médicas não é nula e não está vazia
+		if(cmTEspecialMedicoList != null && !cmTEspecialMedicoList.isEmpty())
+			// Para cada especialidade médica encontrada, coloca o ID do médico e o nome do médico no mapa
+			cmTEspecialMedicoList.forEach(d -> {
+				_map.put(d.getMedicoId().getId(), d.getMedicoId().getNome());
+			});
+
+		// Gera um XML para um combobox remoto utilizando o mapa de médicos e especialidades
+		String xml = Core.remoteComboBoxXml(_map, view.medico_com_especialidade, null);
+
+		// Retorna a resposta renderizada com o XML gerado
+		return this.renderView(xml);
+	}
+
+	/*----#end-code----*/
 }

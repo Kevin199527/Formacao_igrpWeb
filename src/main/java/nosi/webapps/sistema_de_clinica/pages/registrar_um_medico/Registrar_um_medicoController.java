@@ -13,7 +13,9 @@ import nosi.webapps.sistema_de_clinica.dao.CmTMedico;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /*----#end-code----*/
 		
@@ -179,7 +181,6 @@ public class Registrar_um_medicoController extends Controller {
 	}
 	/* Start-Code-Block (custom-actions)  *//* End-Code-Block  */
 /*----#start-code(custom_actions)----*/
-
 
 /*----#end-code----*/
 }

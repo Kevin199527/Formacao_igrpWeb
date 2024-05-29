@@ -1,4 +1,4 @@
-package nosi.webapps.sistema_de_clinica.process.process_1716564764;
+package nosi.webapps.sistema_de_clinica.process.process_1716832949;
 
 import java.io.IOException;//
 import java.util.List;//
@@ -15,10 +15,10 @@ import nosi.core.webapp.bpmn.BPMNTaskController;//
 
 /**
  *demo@nosi.cv
- *25-05-2024
+ *27-05-2024
 */
 
-public class TaskTask_1f3p52pController extends BPMNTaskController {
+public class TaskTask_0xqc21fController extends BPMNTaskController {
 
 	public Response actionIndex() throws IOException, ServletException, IllegalArgumentException, IllegalAccessException {
 

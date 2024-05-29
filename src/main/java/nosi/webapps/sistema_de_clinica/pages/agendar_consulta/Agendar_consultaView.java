@@ -5,6 +5,7 @@ import nosi.core.webapp.View;
 import nosi.core.gui.components.*;
 import nosi.core.gui.fields.*;
 import static nosi.core.i18n.Translator.gt;
+import nosi.core.webapp.Core;
 
 public class Agendar_consultaView extends View {
 
@@ -35,7 +36,7 @@ public class Agendar_consultaView extends View {
 		
 		especialidade_medica = new ListField(model,"especialidade_medica");
 		especialidade_medica.setLabel(gt("Especialidade Medica"));
-		especialidade_medica.propertie().add("name","p_especialidade_medica").add("type","select").add("multiple","false").add("tags","false").add("load_service_data","false").add("domain","").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","").add("tooltip","false").add("disable_copy_paste","false");
+		especialidade_medica.propertie().add("remote-FindMedico",Core.getIGRPLink("sistema_de_clinica","Agendar_consulta","FindMedico")).add("name","p_especialidade_medica").add("type","select").add("multiple","false").add("tags","false").add("load_service_data","false").add("domain","").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","").add("tooltip","false").add("disable_copy_paste","false");
 		
 		medico_com_especialidade = new ListField(model,"medico_com_especialidade");
 		medico_com_especialidade.setLabel(gt("Medico Com Especialidade"));

@@ -45,7 +45,7 @@
                 </foto>
                 <nome name="p_nome" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="Nome do medico" desclabel="false" inputmask="" right="false" tooltip="false" disable_copy_paste="false">
                     <label>Nome</label>
-                    <value>Voluptatem ipsum natus voluptatem perspiciatis</value>
+                    <value>Ut elit iste omnis ipsum</value>
                     <validations>
                         <validation>
                             <annotation>@NotNull</annotation>
@@ -54,7 +54,7 @@
                 </nome>
                 <numero_da_ordem_dos_medicos name="p_numero_da_ordem_dos_medicos" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="O número de registro do médico junto ao órgão regulador." desclabel="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
                     <label>Número da Ordem dos Médicos</label>
-                    <value>237</value>
+                    <value>88</value>
                     <validations>
                         <validation>
                             <annotation>@NotNull</annotation>
@@ -63,7 +63,7 @@
                 </numero_da_ordem_dos_medicos>
                 <telefones name="p_telefones" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="Telefone" desclabel="false" inputmask="" right="false" tooltip="false" disable_copy_paste="false">
                     <label>Telefones</label>
-                    <value>Sed lorem natus sit consectetur</value>
+                    <value>Natus lorem elit officia amet</value>
                     <validations>
                         <validation>
                             <annotation>@NotNull</annotation>

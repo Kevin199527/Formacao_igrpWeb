@@ -1,13 +1,13 @@
-package nosi.webapps.sistema_de_clinica.process.process_1716564764;
+package nosi.webapps.sistema_de_clinica.process.process_1716832949;
 
 import nosi.core.webapp.bpmn.TaskPermissionInterface;
 import nosi.webapps.igrp.dao.ActivityExecute;
 
 /**
  * demo@nosi.cv
- * 25-05-2024
+ * 27-05-2024
  */
-public class Process1716564764Permission implements TaskPermissionInterface {
+public class Process1716832949Permission implements TaskPermissionInterface {
 
 		@Override
 		public boolean allowTask(ActivityExecute task) {

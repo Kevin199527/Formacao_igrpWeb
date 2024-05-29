@@ -50,6 +50,8 @@ public class DashboardController extends Controller {
 		/* Start-Code-Block (index) *//* End-Code-Block (index) */
 		/*----#start-code(index)----*/
 
+		model.setStatbox_2_val(Core.query(Core.defaultConnection(), "SELECT COUNT(1) as statbox_2_val FROM public.\"cm_t_medico\"").getSingleResult().get(0).toString());
+
 		model.setStatbox_1_val(Core.query(Core.defaultConnection(), "SELECT COUNT(1) as statbox_1_val FROM public.\"CM_T_PACIENTE\"").getSingleResult().get(0).toString());
 
 		view.grafico_de_barra.loadQuery(Core.query(null,"SELECT 'Teste01' as EixoX, '2024' as EixoY, 15 as EixoZ"
@@ -62,10 +64,9 @@ public class DashboardController extends Controller {
 				+" UNION SELECT '2080' as EixoX, 'Lem-Ferreira' as EixoY, 23 as EixoZ"
 				+" UNION SELECT '2005' as EixoX, 'Achada Mato' as EixoY, 40 as EixoZ"));
 
-		view.grafico_de_pizza.loadQuery(Core.query(null,"SELECT 'X1' as EixoX, 'Y1' as EixoY, 15 as EixoZ"
-				+" UNION SELECT 'X2' as EixoX, 'Y2' as EixoY, 10 as EixoZ"
-				+" UNION SELECT 'X2' as EixoX, 'Y2' as EixoY, 23 as EixoZ"
-				+" UNION SELECT 'X3' as EixoX, 'Y3' as EixoY, 40 as EixoZ"));
+		view.grafico_de_pizza.loadQuery(Core.query(Core.defaultConnection(),
+				"select case when estado = 'A' then 'Activo' else 'Inativo' end estado, count(*) " +
+					"as eixoX from cm_t_medico group by estado order by estado asc"));
 		/*----#end-code----*/
 		view.setModel(model);
 		return this.renderView(view);	

@@ -41,7 +41,7 @@
             <fields>
                 <data name="p_data" type="date" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" tooltip="false" disable_copy_paste="false" class="primary">
                     <label>Data</label>
-                    <value>05-04-2014</value>
+                    <value>08-04-2014</value>
                     <validations>
                         <validation>
                             <annotation>@NotNull</annotation>
@@ -69,6 +69,14 @@
                             <value>4</value>
                         </option>
                     </list>
+                    <rules>
+                        <rule type="remote_combobox">
+                            <proc>FindMedico</proc>
+                            <requestFields>
+                                <item>p_especialidade_medica</item>
+                            </requestFields>
+                        </rule>
+                    </rules>
                 </especialidade_medica>
                 <medico_com_especialidade name="p_medico_com_especialidade" type="select" multiple="false" tags="false" load_service_data="false" domain="" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="" tooltip="false" disable_copy_paste="false">
                     <label>Medico Com Especialidade</label>
@@ -115,62 +123,62 @@
             <table>
                 <value>
                     <row>
-                        <medico name="p_medico" desc="true">Lorem perspiciatis accusantium consectetur voluptatem</medico>
-                        <medico_check name="p_medico_check">Lorem perspiciatis accusantium consectetur voluptatem</medico_check>
-                        <especialidade name="p_especialidade" desc="true">Ut officia stract mollit ipsum</especialidade>
-                        <especialidade_check name="p_especialidade_check">Ut officia stract mollit ipsum</especialidade_check>
-                        <hora_inicio name="p_hora_inicio" desc="true">Anim adipiscing officia dolor mollit</hora_inicio>
-                        <hora_inicio_check name="p_hora_inicio_check">Anim adipiscing officia dolor mollit</hora_inicio_check>
-                        <hora_fim_ name="p_hora_fim_" desc="true">Natus omnis officia iste anim</hora_fim_>
-                        <hora_fim__check name="p_hora_fim__check">Natus omnis officia iste anim</hora_fim__check>
+                        <medico name="p_medico" desc="true">Doloremque dolor laudantium amet anim</medico>
+                        <medico_check name="p_medico_check">Doloremque dolor laudantium amet anim</medico_check>
+                        <especialidade name="p_especialidade" desc="true">Lorem sed iste adipiscing aperiam</especialidade>
+                        <especialidade_check name="p_especialidade_check">Lorem sed iste adipiscing aperiam</especialidade_check>
+                        <hora_inicio name="p_hora_inicio" desc="true">Amet natus accusantium rem anim</hora_inicio>
+                        <hora_inicio_check name="p_hora_inicio_check">Amet natus accusantium rem anim</hora_inicio_check>
+                        <hora_fim_ name="p_hora_fim_" desc="true">Iste mollit doloremque sit anim</hora_fim_>
+                        <hora_fim__check name="p_hora_fim__check">Iste mollit doloremque sit anim</hora_fim__check>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
                     </row>
                     <row>
-                        <medico name="p_medico" desc="true">Accusantium iste aliqua doloremque rem</medico>
-                        <medico_check name="p_medico_check">Accusantium iste aliqua doloremque rem</medico_check>
-                        <especialidade name="p_especialidade" desc="true">Iste omnis lorem laudantium aperiam</especialidade>
-                        <especialidade_check name="p_especialidade_check">Iste omnis lorem laudantium aperiam</especialidade_check>
-                        <hora_inicio name="p_hora_inicio" desc="true">Unde omnis voluptatem consectetur dolor</hora_inicio>
-                        <hora_inicio_check name="p_hora_inicio_check">Unde omnis voluptatem consectetur dolor</hora_inicio_check>
-                        <hora_fim_ name="p_hora_fim_" desc="true">Lorem dolor aliqua anim laudantium</hora_fim_>
-                        <hora_fim__check name="p_hora_fim__check">Lorem dolor aliqua anim laudantium</hora_fim__check>
+                        <medico name="p_medico" desc="true">Anim stract deserunt elit ipsum</medico>
+                        <medico_check name="p_medico_check">Anim stract deserunt elit ipsum</medico_check>
+                        <especialidade name="p_especialidade" desc="true">Deserunt perspiciatis officia accusantium amet</especialidade>
+                        <especialidade_check name="p_especialidade_check">Deserunt perspiciatis officia accusantium amet</especialidade_check>
+                        <hora_inicio name="p_hora_inicio" desc="true">Amet mollit officia ipsum ut</hora_inicio>
+                        <hora_inicio_check name="p_hora_inicio_check">Amet mollit officia ipsum ut</hora_inicio_check>
+                        <hora_fim_ name="p_hora_fim_" desc="true">Deserunt perspiciatis voluptatem aperiam mollit</hora_fim_>
+                        <hora_fim__check name="p_hora_fim__check">Deserunt perspiciatis voluptatem aperiam mollit</hora_fim__check>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
                     </row>
                     <row>
-                        <medico name="p_medico" desc="true">Perspiciatis labore unde perspiciatis accusantium</medico>
-                        <medico_check name="p_medico_check">Perspiciatis labore unde perspiciatis accusantium</medico_check>
-                        <especialidade name="p_especialidade" desc="true">Officia amet voluptatem stract amet</especialidade>
-                        <especialidade_check name="p_especialidade_check">Officia amet voluptatem stract amet</especialidade_check>
-                        <hora_inicio name="p_hora_inicio" desc="true">Ipsum consectetur omnis rem elit</hora_inicio>
-                        <hora_inicio_check name="p_hora_inicio_check">Ipsum consectetur omnis rem elit</hora_inicio_check>
-                        <hora_fim_ name="p_hora_fim_" desc="true">Totam ut magna perspiciatis aperiam</hora_fim_>
-                        <hora_fim__check name="p_hora_fim__check">Totam ut magna perspiciatis aperiam</hora_fim__check>
+                        <medico name="p_medico" desc="true">Sit perspiciatis ut laudantium officia</medico>
+                        <medico_check name="p_medico_check">Sit perspiciatis ut laudantium officia</medico_check>
+                        <especialidade name="p_especialidade" desc="true">Voluptatem ipsum amet sed laudantium</especialidade>
+                        <especialidade_check name="p_especialidade_check">Voluptatem ipsum amet sed laudantium</especialidade_check>
+                        <hora_inicio name="p_hora_inicio" desc="true">Dolor stract accusantium adipiscing consectetur</hora_inicio>
+                        <hora_inicio_check name="p_hora_inicio_check">Dolor stract accusantium adipiscing consectetur</hora_inicio_check>
+                        <hora_fim_ name="p_hora_fim_" desc="true">Totam unde totam amet labore</hora_fim_>
+                        <hora_fim__check name="p_hora_fim__check">Totam unde totam amet labore</hora_fim__check>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
                     </row>
                     <row>
-                        <medico name="p_medico" desc="true">Sit elit consectetur magna adipiscing</medico>
-                        <medico_check name="p_medico_check">Sit elit consectetur magna adipiscing</medico_check>
-                        <especialidade name="p_especialidade" desc="true">Perspiciatis deserunt aliqua unde doloremque</especialidade>
-                        <especialidade_check name="p_especialidade_check">Perspiciatis deserunt aliqua unde doloremque</especialidade_check>
-                        <hora_inicio name="p_hora_inicio" desc="true">Unde dolor aliqua consectetur voluptatem</hora_inicio>
-                        <hora_inicio_check name="p_hora_inicio_check">Unde dolor aliqua consectetur voluptatem</hora_inicio_check>
-                        <hora_fim_ name="p_hora_fim_" desc="true">Sit mollit aperiam doloremque magna</hora_fim_>
-                        <hora_fim__check name="p_hora_fim__check">Sit mollit aperiam doloremque magna</hora_fim__check>
+                        <medico name="p_medico" desc="true">Amet labore stract aliqua voluptatem</medico>
+                        <medico_check name="p_medico_check">Amet labore stract aliqua voluptatem</medico_check>
+                        <especialidade name="p_especialidade" desc="true">Consectetur officia voluptatem natus lorem</especialidade>
+                        <especialidade_check name="p_especialidade_check">Consectetur officia voluptatem natus lorem</especialidade_check>
+                        <hora_inicio name="p_hora_inicio" desc="true">Laudantium ipsum adipiscing elit ipsum</hora_inicio>
+                        <hora_inicio_check name="p_hora_inicio_check">Laudantium ipsum adipiscing elit ipsum</hora_inicio_check>
+                        <hora_fim_ name="p_hora_fim_" desc="true">Unde doloremque stract consectetur doloremque</hora_fim_>
+                        <hora_fim__check name="p_hora_fim__check">Unde doloremque stract consectetur doloremque</hora_fim__check>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
                     </row>
                     <row>
-                        <medico name="p_medico" desc="true">Mollit ut sed sit omnis</medico>
-                        <medico_check name="p_medico_check">Mollit ut sed sit omnis</medico_check>
-                        <especialidade name="p_especialidade" desc="true">Sit magna amet consectetur elit</especialidade>
-                        <especialidade_check name="p_especialidade_check">Sit magna amet consectetur elit</especialidade_check>
-                        <hora_inicio name="p_hora_inicio" desc="true">Iste sit unde adipiscing sed</hora_inicio>
-                        <hora_inicio_check name="p_hora_inicio_check">Iste sit unde adipiscing sed</hora_inicio_check>
-                        <hora_fim_ name="p_hora_fim_" desc="true">Elit totam anim labore anim</hora_fim_>
-                        <hora_fim__check name="p_hora_fim__check">Elit totam anim labore anim</hora_fim__check>
+                        <medico name="p_medico" desc="true">Stract doloremque voluptatem amet aperiam</medico>
+                        <medico_check name="p_medico_check">Stract doloremque voluptatem amet aperiam</medico_check>
+                        <especialidade name="p_especialidade" desc="true">Iste omnis sit voluptatem sed</especialidade>
+                        <especialidade_check name="p_especialidade_check">Iste omnis sit voluptatem sed</especialidade_check>
+                        <hora_inicio name="p_hora_inicio" desc="true">Aperiam sit ut ipsum consectetur</hora_inicio>
+                        <hora_inicio_check name="p_hora_inicio_check">Aperiam sit ut ipsum consectetur</hora_inicio_check>
+                        <hora_fim_ name="p_hora_fim_" desc="true">Magna aliqua laudantium elit doloremque</hora_fim_>
+                        <hora_fim__check name="p_hora_fim__check">Magna aliqua laudantium elit doloremque</hora_fim__check>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
                     </row>

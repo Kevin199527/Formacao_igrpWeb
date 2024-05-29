@@ -141,7 +141,7 @@ public class Agendamento_de_consultaController extends Controller {
 				agendamento.setCmEspMedId(espMed);
 				agendamento.setHoraFim(row.getHora_fim().getKey());
 				agendamento.setHoraInicio(row.getHora_inicio_().getKey());
-				agendamento.setLocalId(String.valueOf(Core.toInt(row.getConsultorio().getKey())));
+				agendamento.setLocalId(row.getConsultorio_id().getKey());
 				agendamento.setDataAgendamento(Core.ToDate(row.getData().getKey(), Core.DD_MM_YYYY, Core.YYYY_MM_DD));
 
 				// Persiste o agendamento na sessão
