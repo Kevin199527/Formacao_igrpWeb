@@ -85,16 +85,22 @@ public class ApiPedido {
         }
     }
 
-    public void save(Session session){
+    public void save(Session session) {
+        // Cria uma nova instância do objeto CmTPedido
         CmTPedido _ped = new CmTPedido();
-        _ped.setEtapaAtual(this.etapaAtual);
-        _ped.setDataPedido(_ped.getDataPedido());
-        _ped.setEstadoPedido(this.estadoPedido);
-        _ped.setNrProcesso(this.nrProcesso);
-        _ped.setProcessoKey(this.processoKey);
-        _ped.setProcessoDesc(this.processoDesc);
-        _ped.setUserPedido(this.userPedido);
+
+        // Define os valores dos campos do objeto _ped com os valores atuais do objeto corrente (this)
+        _ped.setEtapaAtual(this.etapaAtual); // Define a etapa atual do pedido
+        _ped.setDataPedido(_ped.getDataPedido()); // Mantém a data do pedido do próprio objeto _ped
+        _ped.setEstadoPedido(this.estadoPedido); // Define o estado atual do pedido
+        _ped.setNrProcesso(this.nrProcesso); // Define o número do processo do pedido
+        _ped.setProcessoKey(this.processoKey); // Define a chave do processo do pedido
+        _ped.setProcessoDesc(this.processoDesc); // Define a descrição do processo do pedido
+        _ped.setUserPedido(this.userPedido); // Define o usuário que fez o pedido
+
+        // Persiste o objeto _ped na sessão do Hibernate
         session.persist(_ped);
     }
+
 
 }
