@@ -35,7 +35,7 @@ public class Agendar_consultaView extends View {
 		
 		medico_com_especialidade = new ListField(model,"medico_com_especialidade");
 		medico_com_especialidade.setLabel(gt("Medico Com Especialidade"));
-		medico_com_especialidade.propertie().add("name","p_medico_com_especialidade").add("type","select").add("multiple","false").add("tags","false").add("load_service_data","false").add("domain","").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","").add("tooltip","false").add("disable_copy_paste","false");
+		medico_com_especialidade.propertie().add("remote-FindList",Core.getIGRPLink("sistema_de_clinica","Agendar_consulta","FindList")).add("name","p_medico_com_especialidade").add("type","select").add("multiple","false").add("tags","false").add("load_service_data","false").add("domain","").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","").add("tooltip","false").add("disable_copy_paste","false");
 		
 		data_de_agendamento = new PlainTextField(model,"data_de_agendamento");
 		data_de_agendamento.setLabel(gt("Data de Agendamento"));

@@ -1,13 +1,13 @@
 package nosi.webapps.sistema_de_clinica.helper;
 
-/*import nosi.webapps.sistema_clinica_medica.dao.CmTMarcacao;
-import nosi.webapps.sistema_clinica_medica.dao.CmTPedido;
+//import nosi.webapps.sistema_de_clinica.dao.CmTMarcacao;
+import nosi.webapps.sistema_de_clinica.dao.CmTPedido;
 import org.hibernate.Session;
 
-import java.util.Date;*/
+import java.util.Date;
 
 public class ApiPedido {
-   /* private String  etapaAtual;
+   private String  etapaAtual;
     private Date dataPedido;
     private String  estadoPedido;
     private Integer nrProcesso;
@@ -88,13 +88,13 @@ public class ApiPedido {
     public void save(Session session){
         CmTPedido _ped = new CmTPedido();
         _ped.setEtapaAtual(this.etapaAtual);
-        _ped.setDataPedido(this.dataPedido);
+        _ped.setDataPedido(_ped.getDataPedido());
         _ped.setEstadoPedido(this.estadoPedido);
         _ped.setNrProcesso(this.nrProcesso);
         _ped.setProcessoKey(this.processoKey);
         _ped.setProcessoDesc(this.processoDesc);
         _ped.setUserPedido(this.userPedido);
         session.persist(_ped);
-    }*/
+    }
 
 }

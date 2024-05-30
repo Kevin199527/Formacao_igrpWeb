@@ -11,7 +11,6 @@ public class Identificacao_do_paciente extends Model{
 	@RParam(rParamName = "p_nome")
 	private String nome;
 
-	@NotNull()
 	@RParam(rParamName = "p_data_nascimento")
 	private String data_nascimento;
 

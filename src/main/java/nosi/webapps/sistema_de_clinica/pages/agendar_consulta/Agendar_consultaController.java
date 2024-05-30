@@ -10,7 +10,6 @@ import nosi.core.webapp.Response;//
 import nosi.webapps.sistema_de_clinica.dao.CmTAgendamento;
 import nosi.webapps.sistema_de_clinica.dao.CmTEspecialMedico;
 import nosi.webapps.sistema_de_clinica.helper.Utils;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +25,7 @@ public class Agendar_consultaController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadLista_de_consulta(Core.query(null,"SELECT 'Lorem mollit ut totam dolor to' as data_de_agendamento,'Adipiscing rem dolor amet pers' as hora_inicio_1,'Dolor magna stract sit iste st' as hora_fim,'1' as selecionar,'hidden-cd62_a6bb' as id_medico "));
+		model.loadLista_de_consulta(Core.query(null,"SELECT 'Accusantium aliqua adipiscing' as data_de_agendamento,'Laudantium omnis iste amet tot' as hora_inicio_1,'Stract labore laudantium labor' as hora_fim,'1' as selecionar,'hidden-913b_e3a2' as id_medico "));
 		view.especialidade_medica.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		view.medico_com_especialidade.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		  ----#gen-example */
@@ -69,7 +68,6 @@ public class Agendar_consultaController extends Controller {
 		// Retorna a resposta renderizada com o XML gerado
 		return this.renderView(xml);
 	}
-
 
 	public Response actionFindList() throws IOException, IllegalArgumentException, IllegalAccessException {
 
@@ -115,7 +113,6 @@ public class Agendar_consultaController extends Controller {
 		// Renderiza a view com os dados do modelo e retorna a resposta
 		return this.renderView(view);
 	}
-
 
 	/*----#end-code----*/
 }

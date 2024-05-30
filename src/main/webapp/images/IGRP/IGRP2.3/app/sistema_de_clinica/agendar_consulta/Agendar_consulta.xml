@@ -90,6 +90,14 @@
                             <value>4</value>
                         </option>
                     </list>
+                    <rules>
+                        <rule type="remote_list">
+                            <proc>FindList</proc>
+                            <requestFields>
+                                <item>p_medico_com_especialidade</item>
+                            </requestFields>
+                        </rule>
+                    </rules>
                 </medico_com_especialidade>
             </fields>
         </form_1>
@@ -112,44 +120,44 @@
             <table>
                 <value>
                     <row>
-                        <data_de_agendamento name="p_data_de_agendamento">Ipsum stract accusantium aperi</data_de_agendamento>
-                        <hora_inicio_1 name="p_hora_inicio_1">Unde natus totam consectetur n</hora_inicio_1>
-                        <hora_fim name="p_hora_fim">Aperiam ut aperiam sit dolorem</hora_fim>
+                        <data_de_agendamento name="p_data_de_agendamento">Totam natus ipsum ut aperiam l</data_de_agendamento>
+                        <hora_inicio_1 name="p_hora_inicio_1">Unde consectetur aperiam labor</hora_inicio_1>
+                        <hora_fim name="p_hora_fim">Deserunt perspiciatis totam of</hora_fim>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
-                        <id_medico name="p_id_medico" tag="id_medico">hidden-4682_0ac0</id_medico>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-1da2_aaf2</id_medico>
                     </row>
                     <row>
-                        <data_de_agendamento name="p_data_de_agendamento">Consectetur sit lorem aperiam</data_de_agendamento>
-                        <hora_inicio_1 name="p_hora_inicio_1">Iste ipsum laudantium officia</hora_inicio_1>
-                        <hora_fim name="p_hora_fim">Elit sit voluptatem lorem stra</hora_fim>
+                        <data_de_agendamento name="p_data_de_agendamento">Doloremque perspiciatis aliqua</data_de_agendamento>
+                        <hora_inicio_1 name="p_hora_inicio_1">Anim laudantium dolor elit mag</hora_inicio_1>
+                        <hora_fim name="p_hora_fim">Laudantium anim dolor sed magn</hora_fim>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
-                        <id_medico name="p_id_medico" tag="id_medico">hidden-5c6d_8c68</id_medico>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-95b2_a63a</id_medico>
                     </row>
                     <row>
-                        <data_de_agendamento name="p_data_de_agendamento">Accusantium unde adipiscing pe</data_de_agendamento>
-                        <hora_inicio_1 name="p_hora_inicio_1">Mollit omnis sit lorem rem lor</hora_inicio_1>
-                        <hora_fim name="p_hora_fim">Voluptatem adipiscing accusant</hora_fim>
+                        <data_de_agendamento name="p_data_de_agendamento">Stract iste sed natus deserunt</data_de_agendamento>
+                        <hora_inicio_1 name="p_hora_inicio_1">Omnis iste dolor officia lauda</hora_inicio_1>
+                        <hora_fim name="p_hora_fim">Unde aperiam ut sed sit rem ip</hora_fim>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
-                        <id_medico name="p_id_medico" tag="id_medico">hidden-a69d_6d3a</id_medico>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-bc2a_9eb4</id_medico>
                     </row>
                     <row>
-                        <data_de_agendamento name="p_data_de_agendamento">Unde perspiciatis officia sit</data_de_agendamento>
-                        <hora_inicio_1 name="p_hora_inicio_1">Anim elit perspiciatis consect</hora_inicio_1>
-                        <hora_fim name="p_hora_fim">Consectetur mollit magna sit l</hora_fim>
+                        <data_de_agendamento name="p_data_de_agendamento">Adipiscing sit voluptatem ut n</data_de_agendamento>
+                        <hora_inicio_1 name="p_hora_inicio_1">Deserunt amet ipsum dolor sed</hora_inicio_1>
+                        <hora_fim name="p_hora_fim">Dolor accusantium officia stra</hora_fim>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
-                        <id_medico name="p_id_medico" tag="id_medico">hidden-ac01_23fb</id_medico>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-21f3_8098</id_medico>
                     </row>
                     <row>
-                        <data_de_agendamento name="p_data_de_agendamento">Perspiciatis anim consectetur</data_de_agendamento>
-                        <hora_inicio_1 name="p_hora_inicio_1">Adipiscing doloremque unde lor</hora_inicio_1>
-                        <hora_fim name="p_hora_fim">Sit natus sit dolor sit unde a</hora_fim>
+                        <data_de_agendamento name="p_data_de_agendamento">Anim sit labore elit labore om</data_de_agendamento>
+                        <hora_inicio_1 name="p_hora_inicio_1">Aperiam doloremque amet sit to</hora_inicio_1>
+                        <hora_fim name="p_hora_fim">Consectetur totam consectetur</hora_fim>
                         <selecionar name="p_selecionar" check="true" desc="true">1</selecionar>
                         <selecionar_check name="p_selecionar_check">1</selecionar_check>
-                        <id_medico name="p_id_medico" tag="id_medico">hidden-343c_5af2</id_medico>
+                        <id_medico name="p_id_medico" tag="id_medico">hidden-922a_a17a</id_medico>
                     </row>
                 </value>
             </table>

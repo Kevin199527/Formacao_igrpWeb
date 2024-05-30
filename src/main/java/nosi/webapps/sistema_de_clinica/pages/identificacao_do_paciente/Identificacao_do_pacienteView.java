@@ -32,7 +32,7 @@ public class Identificacao_do_pacienteView extends View {
 		
 		data_nascimento = new DateField(model,"data_nascimento");
 		data_nascimento.setLabel(gt("Data Nascimento"));
-		data_nascimento.propertie().add("name","p_data_nascimento").add("type","date").add("range","false").add("disableWeekends","false").add("disabledBeforetoday","false").add("daysoff","false").add("maxlength","250").add("required","true").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false").add("tooltip","false").add("disable_copy_paste","false").add("class","primary");
+		data_nascimento.propertie().add("name","p_data_nascimento").add("type","date").add("range","false").add("disableWeekends","false").add("disabledBeforetoday","false").add("daysoff","false").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false").add("tooltip","false").add("disable_copy_paste","false").add("class","primary");
 		
 		tipo_documento_ = new ListField(model,"tipo_documento_");
 		tipo_documento_.setLabel(gt("Tipo Documento "));
