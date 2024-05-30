@@ -19,6 +19,7 @@ import nosi.core.webapp.activit.rest.entities.ProcessInstancesService;
 import nosi.core.webapp.activit.rest.entities.TaskVariables;
 import nosi.core.webapp.activit.rest.helpers.ActivitiConstants;
 import nosi.core.webapp.helpers.FileHelper;
+import nosi.core.webapp.helpers.IgrpHelper;
 import nosi.core.webapp.webservices.helpers.ResponseConverter;
 import nosi.core.webapp.webservices.helpers.ResponseError;
 
@@ -36,88 +37,81 @@ public class ProcessInstanceServiceRest extends GenericActivitiRest {
     @SuppressWarnings("unchecked")
     public List<ProcessInstancesService> queryHistoryProcessk(){
         List<ProcessInstancesService> d = new ArrayList<>();
-        var response = this.getRestRequest().post("query/historic-process-instances?size=100000000",this.filterBody.toString(), String.class);
+        Response response = this.getRestRequest().post("query/historic-process-instances?size=100000000",this.filterBody.toString());
         if(response!=null){
-			/*String contentResp = "";
-			try (InputStream is = (InputStream) response.getEntity()){
-				contentResp = FileHelper.convertToString(is);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			if(response.getStatus()==200){*/
-            d = (List<ProcessInstancesService>) ResponseConverter.convertJsonToListDao(response,"data",
-                    new TypeToken<List<ProcessInstancesService>>(){}.getType());
-            if (d != null && !d.isEmpty()) {
-                HashMap<String,String> mProc = new HashMap<>();
-                d.forEach(t -> {
-                    String processName;
-                    if(mProc.containsKey(t.getProcessDefinitionUrl()))
-                        processName=mProc.get(t.getProcessDefinitionUrl());
-                    else {
-                        ProcessDefinitionService proc = new ProcessDefinitionServiceRest()
-                                .getProccessDescription(t.getProcessDefinitionUrl());
-                        processName = proc.getName();
-                        mProc.put(t.getProcessDefinitionUrl(), processName);
-                    }
-                    t.setProcessName(processName);
-                });
+            String contentResp = "";
+            try (InputStream is = (InputStream) response.getEntity()){
+                //contentResp = FileHelper.convertToString(is);
+                contentResp = IgrpHelper.convertToJsonString(is);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-			/*}else {
-				this.setError((ResponseError) ResponseConverter.convertJsonToDao(contentResp, ResponseError.class));
-			}
-			response.close();*/
+            if(response.getStatus()==200){
+                d = (List<ProcessInstancesService>) ResponseConverter.convertJsonToListDao(contentResp,"data",
+                        new TypeToken<List<ProcessInstancesService>>(){}.getType());
+                if (d != null && !d.isEmpty()) {
+                    HashMap<String,String> mProc = new HashMap<>();
+                    d.forEach(t -> {
+                        String processName;
+                        if(mProc.containsKey(t.getProcessDefinitionUrl()))
+                            processName=mProc.get(t.getProcessDefinitionUrl());
+                        else {
+                            ProcessDefinitionService proc = new ProcessDefinitionServiceRest()
+                                    .getProccessDescription(t.getProcessDefinitionUrl());
+                            processName = proc.getName();
+                            mProc.put(t.getProcessDefinitionUrl(), processName);
+                        }
+                        t.setProcessName(processName);
+                    });
+                }
+            }else {
+                this.setError((ResponseError) ResponseConverter.convertJsonToDao(contentResp, ResponseError.class));
+            }
+            response.close();
         }
         return d;
     }
 
     public ProcessInstancesService historicProcess(String id) {
         ProcessInstancesService d = new ProcessInstancesService();
-        var response = this.getRestRequest().get("history/historic-process-instances", id, String.class);
+        Response response = this.getRestRequest().get("history/historic-process-instances", id);
         if (response != null) {
-			/*String contentResp = "";
-			try (InputStream is = (InputStream) response.getEntity()){
-				contentResp = FileHelper.convertToString(is);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			if (Response.Status.OK.getStatusCode() == response.getStatus()) {*/
-            d = (ProcessInstancesService) ResponseConverter.convertJsonToDao(response,
-                    ProcessInstancesService.class);
-			/*} else {
-				this.setError((ResponseError) ResponseConverter.convertJsonToDao(contentResp, ResponseError.class));
-			}
-			response.close();*/
+            String contentResp = "";
+            try (InputStream is = (InputStream) response.getEntity()){
+                //contentResp = FileHelper.convertToString(is);
+                contentResp = IgrpHelper.convertToJsonString(is);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (Response.Status.OK.getStatusCode() == response.getStatus()) {
+                d = (ProcessInstancesService) ResponseConverter.convertJsonToDao(contentResp,
+                        ProcessInstancesService.class);
+            } else {
+                this.setError((ResponseError) ResponseConverter.convertJsonToDao(contentResp, ResponseError.class));
+            }
+            response.close();
         }
         return d;
     }
 
     public Integer totalProcces(String processKey) {
         this.addFilterUrl("processDefinitionKey", processKey);
-
-        try{
-            var response = this.getRestRequest()
-                    .get("history/historic-process-instances?size=" + ActivitiConstants.SIZE_QUERY + this.getFilterUrl(), String.class);
-            if (response != null) {
-				/*String contentResp = "";
-				try (InputStream is = (InputStream) response.getEntity()) {
-					contentResp = FileHelper.convertToString(is);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				if (Response.Status.OK.getStatusCode() == response.getStatus()) {
-					response.close();*/
-                return this.processDefinition.getTotal(response);
-				/*}
-				response.close();
-				this.setError((ResponseError) ResponseConverter.convertJsonToDao(contentResp, ResponseError.class));*/
+        Response response = this.getRestRequest()
+                .get("history/historic-process-instances?size=" + ActivitiConstants.SIZE_QUERY + this.getFilterUrl());
+        if (response != null) {
+            String contentResp = "";
+            try (InputStream is = (InputStream) response.getEntity()) {
+                //contentResp = FileHelper.convertToString(is);
+                contentResp = IgrpHelper.convertToJsonString(is);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            var error = new ResponseError();
-            error.setMessage(e.getMessage());
-            error.setException(e.toString());
-            error.setStatusCode(500);
-
-            this.setError(error);
+            if (Response.Status.OK.getStatusCode() == response.getStatus()) {
+                response.close();
+                return this.processDefinition.getTotal(contentResp);
+            }
+            response.close();
+            this.setError((ResponseError) ResponseConverter.convertJsonToDao(contentResp, ResponseError.class));
         }
         return 0;
     }
@@ -143,33 +137,24 @@ public class ProcessInstanceServiceRest extends GenericActivitiRest {
         if (isFinished) {
             this.addFilterUrl("finished", "true");
         }
-
-        try{
-            var response = this.getRestRequest()
-                    .get("history/historic-process-instances?size=" + ActivitiConstants.SIZE_QUERY + this.getFilterUrl(), String.class);
-            if (response != null) {
-				/*String contentResp = "";
-				try (InputStream is = (InputStream) response.getEntity()) {
-					contentResp = FileHelper.convertToString(is);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				if (Response.Status.OK.getStatusCode() == response.getStatus()) {*/
-                d = (List<HistoricProcessInstance>) ResponseConverter.convertJsonToListDao(response, "data",
+        Response response = this.getRestRequest()
+                .get("history/historic-process-instances?size=" + ActivitiConstants.SIZE_QUERY + this.getFilterUrl());
+        if (response != null) {
+            String contentResp = "";
+            try (InputStream is = (InputStream) response.getEntity()) {
+                //contentResp = FileHelper.convertToString(is);
+                contentResp = IgrpHelper.convertToJsonString((InputStream) response.getEntity());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (Response.Status.OK.getStatusCode() == response.getStatus()) {
+                d = (List<HistoricProcessInstance>) ResponseConverter.convertJsonToListDao(contentResp, "data",
                         new TypeToken<List<HistoricProcessInstance>>() {
                         }.getType());
-				/*} else {
-					this.setError((ResponseError) ResponseConverter.convertJsonToDao(contentResp, ResponseError.class));
-				}
-				response.close();*/
+            } else {
+                this.setError((ResponseError) ResponseConverter.convertJsonToDao(contentResp, ResponseError.class));
             }
-        } catch (Exception e) {
-            var error = new ResponseError();
-            error.setMessage(e.getMessage());
-            error.setException(e.toString());
-            error.setStatusCode(500);
-
-            this.setError(error);
+            response.close();
         }
         return d;
     }
@@ -190,32 +175,24 @@ public class ProcessInstanceServiceRest extends GenericActivitiRest {
     @SuppressWarnings("unchecked")
     public List<ProcessInstancesService> getRuntimeProcessIntances(String processKey) {
         List<ProcessInstancesService> list = new ArrayList<>();
-        try{
-            var response = this.getRestRequest()
-                    .get("runtime/process-instances?processDefinitionKey=" + processKey + "&suspended=false&size=" + ActivitiConstants.SIZE_QUERY, String.class);
-            if (response != null) {
-				/*String contentResp = "";
-				try (InputStream is = (InputStream) response.getEntity()){
-					contentResp = FileHelper.convertToString(is);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				if (Response.Status.OK.getStatusCode() == response.getStatus()) {*/
-                list = (List<ProcessInstancesService>) ResponseConverter.convertJsonToListDao(response, "data",
+        Response response = this.getRestRequest()
+                .get("runtime/process-instances?processDefinitionKey=" + processKey + "&suspended=false&size=" + ActivitiConstants.SIZE_QUERY );
+        if (response != null) {
+            String contentResp = "";
+            try (InputStream is = (InputStream) response.getEntity()){
+                //contentResp = FileHelper.convertToString(is);
+                contentResp = IgrpHelper.convertToJsonString(is);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (Response.Status.OK.getStatusCode() == response.getStatus()) {
+                list = (List<ProcessInstancesService>) ResponseConverter.convertJsonToListDao(contentResp, "data",
                         new TypeToken<List<ProcessInstancesService>>() {
                         }.getType());
-				/*} else {
-					this.setError((ResponseError) ResponseConverter.convertJsonToDao(contentResp, ResponseError.class));
-				}
-				response.close();*/
+            } else {
+                this.setError((ResponseError) ResponseConverter.convertJsonToDao(contentResp, ResponseError.class));
             }
-        } catch (Exception e) {
-            var error = new ResponseError();
-            error.setMessage(e.getMessage());
-            error.setException(e.toString());
-            error.setStatusCode(500);
-
-            this.setError(error);
+            response.close();
         }
         return list;
     }

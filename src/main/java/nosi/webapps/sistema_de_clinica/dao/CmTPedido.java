@@ -1,19 +1,19 @@
 package nosi.webapps.sistema_de_clinica.dao;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Column;
-import javax.persistence.Id;
-import java.time.LocalDateTime;
-import nosi.base.ActiveRecord.BaseActiveRecord;
-import java.io.Serial;
-import javax.persistence.ManyToOne;
-import javax.persistence.Entity;
-import jakarta.validation.constraints.NotNull;
-import javax.persistence.Table;
-import javax.persistence.GenerationType;
-import javax.persistence.NamedQuery;
-import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
+import javax.persistence.GeneratedValue;
+import java.time.LocalDateTime;
+import javax.persistence.Id;
+import javax.persistence.GenerationType;
+import javax.persistence.Column;
+import javax.persistence.ForeignKey;
+import java.io.Serial;
+import jakarta.validation.constraints.NotNull;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import nosi.base.ActiveRecord.BaseActiveRecord;
+import javax.persistence.NamedQuery;
+import javax.persistence.ManyToOne;
 
 /**
  * @author: Kevin Sousa 2024-05-30
@@ -50,8 +50,8 @@ public class CmTPedido extends BaseActiveRecord<CmTPedido> {
 	private LocalDateTime dataPedido;
 	@Column(name = "user_pedido")
 	private String userPedido;
-	@ManyToOne
-	@JoinColumn(name = "id_paciente", foreignKey = @ForeignKey(name = "paciente_pedido_fk"))
+
+	@Column(name = "id_paciente")
 	private CmTPaciente idPaciente;
 	@Column(name = "estado_pedido")
 	private String estadoPedido;

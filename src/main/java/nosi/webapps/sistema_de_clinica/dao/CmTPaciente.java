@@ -1,20 +1,16 @@
 package nosi.webapps.sistema_de_clinica.dao;
 
 import javax.persistence.GeneratedValue;
-import javax.persistence.Column;
-import javax.persistence.Id;
-import java.time.LocalDateTime;
-import nosi.base.ActiveRecord.BaseActiveRecord;
-import java.io.Serial;
-import javax.persistence.Entity;
-import jakarta.xml.bind.annotation.XmlTransient;
-import javax.persistence.Table;
 import javax.persistence.GenerationType;
-import javax.persistence.OneToMany;
-import javax.persistence.NamedQuery;
+import javax.persistence.Column;
+import java.io.Serial;
+import java.time.LocalDateTime;
 import jakarta.validation.constraints.Size;
-import java.util.List;
-import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import nosi.base.ActiveRecord.BaseActiveRecord;
+import javax.persistence.NamedQuery;
+import javax.persistence.Id;
 
 /**
  * @author: Kevin Sousa 2024-05-30
@@ -61,9 +57,6 @@ public class CmTPaciente extends BaseActiveRecord<CmTPaciente> {
 	private LocalDateTime dataRegisto;
 	@Column(name = "data_update")
 	private LocalDateTime dataUpdate;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idPaciente")
-	private List<CmTPedido> cmtpedidoList;
 
    public Integer getId() {
       return this.id;
@@ -144,14 +137,6 @@ public class CmTPaciente extends BaseActiveRecord<CmTPaciente> {
    public void setDataUpdate(LocalDateTime dataUpdate) {
       this.dataUpdate = dataUpdate;
    }
-
-	@XmlTransient
-	public List<CmTPedido> getcmtpedidoList() {
-		return cmtpedidoList;
-	}
-	public void setcmtpedidoList(List<CmTPedido> cmtpedidoList) {
-		this.cmtpedidoList = cmtpedidoList;
-	}
 
    public static final class Field {
       public static final String ID = "id";

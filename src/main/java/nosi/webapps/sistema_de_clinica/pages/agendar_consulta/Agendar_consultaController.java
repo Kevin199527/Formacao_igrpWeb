@@ -25,14 +25,14 @@ public class Agendar_consultaController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadLista_de_consulta(Core.query(null,"SELECT 'Accusantium aliqua adipiscing' as data_de_agendamento,'Laudantium omnis iste amet tot' as hora_inicio_1,'Stract labore laudantium labor' as hora_fim,'1' as selecionar,'hidden-913b_e3a2' as id_medico "));
+		model.loadLista_de_consulta(Core.query(null,"SELECT 'Doloremque labore ipsum elit d' as data_de_agendamento,'Omnis dolor consectetur lorem' as hora_inicio_1,'Rem sit consectetur ut iste ad' as hora_fim,'1' as selecionar,'hidden-312d_423b' as id_medico "));
 		view.especialidade_medica.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		view.medico_com_especialidade.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		  ----#gen-example */
 		/* Start-Code-Block (index) *//* End-Code-Block (index) */
 		/*----#start-code(index)----*/
 		// Configuração inicial para carregar especialidades
-		view.especialidade_medica.setListOptions(Utils.getEspecialidade());
+		//view.especialidade_medica.setListOptions(Utils.getEspecialidade());
 		
 		/*----#end-code----*/
 		view.setModel(model);

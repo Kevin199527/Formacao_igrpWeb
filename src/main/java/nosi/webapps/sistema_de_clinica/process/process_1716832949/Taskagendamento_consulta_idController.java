@@ -7,6 +7,8 @@ import jakarta.servlet.ServletException;//
 import nosi.core.webapp.Core;//
 import nosi.webapps.igrp.dao.TipoDocumentoEtapa;//
 import nosi.core.webapp.bpmn.BPMNTaskController;//
+import nosi.webapps.sistema_de_clinica.dao.CmTMarcacao;
+import nosi.webapps.sistema_de_clinica.dao.CmTPedido;
 import nosi.webapps.sistema_de_clinica.pages.agendar_consulta.Agendar_consulta;//
 import nosi.webapps.sistema_de_clinica.pages.agendar_consulta.Agendar_consultaView;//
 /*----#start-code(packages_import)----*/
@@ -54,11 +56,12 @@ public class Taskagendamento_consulta_idController extends BPMNTaskController {
 
 		Session session = null;
 		Transaction transaction = null;
+
 		try{
 			session = Core.getSession(Core.defaultConnection());
 			transaction = session.beginTransaction();
 
-			/*ApiPedido apiPedido = new ApiPedido();
+			ApiPedido apiPedido = new ApiPedido();
 
 			apiPedido.setNrProcesso(Core.toInt(task.getProcessInstanceId()));
 			apiPedido.setEstadoPedido("PENDENTE");
@@ -67,30 +70,24 @@ public class Taskagendamento_consulta_idController extends BPMNTaskController {
 			apiPedido.setEtapaAtual(task.getTaskDefinitionKey());
 			apiPedido.save(session);
 
-			CheckBoxHelper checkBoxHelper = Core.extractCheckBox(Core.getParamArray("_fk"), Core.getParamArray("_check_fk"));
+
+			CheckBoxHelper checkBoxHelper = Core.extractCheckBox(Core.getParamArray("p_selecionar_fk"),
+					Core.getParamArray("p_selecionar_check_fk"));
+
+			/*List<String> ViewCheckout = checkBoxHelper.getChekedIds(); // Pegar o checkout que foi chekout...
+			List<String> NotCheckout = checkBoxHelper.getUncheckedIds(); // Pegar o checkout que não foi chekout...*/
 
 			if (checkBoxHelper.getChekedIds() != null && !checkBoxHelper.getChekedIds().isEmpty()) {
 				for (String checkedId : checkBoxHelper.getChekedIds()) {
-					CmTPaciente paciente = new CmTPaciente();
-					Identificacao_do_paciente identificacaoDoPaciente = new Identificacao_do_paciente();
 
-					// Presumindo que você tem um método setId ou similar para associar o ID ao paciente
-					paciente.setId(Core.toInt(identificacaoDoPaciente.getNome()));
-					paciente.setNome(identificacaoDoPaciente.getNome());
-					paciente.setNomeMae(identificacaoDoPaciente.getNome_de_mae());
-					paciente.setNomePai(identificacaoDoPaciente.getNome_de_pai());
-					paciente.setTipoDocumento(identificacaoDoPaciente.getTipo_documento_());
-					paciente.setNrDocumento(identificacaoDoPaciente.getNumero_documento());
+					CmTMarcacao marcacao = new CmTMarcacao();
 
-					if (identificacaoDoPaciente.getPrimeira_consulta() == 1){
+					marcacao.setAgedamentoId(Integer.valueOf(checkedId));
 
-					}
-
-					// Salvando ou atualizando o paciente na sessão
-					session.saveOrUpdate(paciente);
+					session.persist(marcacao);
 				}
 			}
-*/
+
 		} catch (Exception e){
 			if(transaction != null)
 				transaction.rollback();

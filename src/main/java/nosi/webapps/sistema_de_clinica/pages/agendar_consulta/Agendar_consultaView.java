@@ -51,10 +51,10 @@ public class Agendar_consultaView extends View {
 		
 		selecionar = new CheckBoxField(model,"selecionar");
 		selecionar.setLabel(gt("Selecionar"));
-		selecionar.propertie().add("name","p_selecionar").add("type","checkbox").add("maxlength","30").add("showLabel","true").add("group_in","").add("java-type","int").add("switch","true").add("check","true").add("desc","true");
+		selecionar.propertie().add("name","p_selecionar").add("type","checkbox").add("maxlength","30").add("showLabel","true").add("group_in","").add("java-type","int").add("switch","false").add("check","true").add("desc","true");
 		
 		selecionar_check = new CheckBoxField(model,"selecionar_check");
-		selecionar_check.propertie().add("name","p_selecionar").add("type","checkbox").add("maxlength","30").add("showLabel","true").add("group_in","").add("java-type","int").add("switch","true").add("check","true").add("desc","true");
+		selecionar_check.propertie().add("name","p_selecionar").add("type","checkbox").add("maxlength","30").add("showLabel","true").add("group_in","").add("java-type","int").add("switch","false").add("check","true").add("desc","true");
 		
 		id_medico = new HiddenField(model,"id_medico");
 		id_medico.setLabel(gt(""));
