@@ -61,6 +61,45 @@ public class Taskagendamento_consulta_idController extends BPMNTaskController {
 			session = Core.getSession(Core.defaultConnection());
 			transaction = session.beginTransaction();
 
+			// Extrai um objeto CheckBoxHelper usando arrays de parâmetros
+			CheckBoxHelper checkBoxHelper = Core.extractCheckBox(Core.getParamArray("p_selecionar_fk"), Core.getParamArray("p_selecionar_check_fk"));
+
+			// 1º Forma de pegar os checkout visto
+			String id = checkBoxHelper.getChekedIds().get(0); // Pegar o checkout que foi checado
+			// Cria uma nova instância de CmTMarcacao
+			CmTMarcacao marcacao = new CmTMarcacao();
+			// Define o ID do agendamento convertendo o ID checado de String para Integer
+			marcacao.setAgedamentoId(Integer.valueOf(id));
+			// Define a data de registro convertendo a data atual para o formato LocalDateTime
+			marcacao.setDataRegistro(Core.convertStringToLocalDateTime(Core.getCurrentDate("yyyy-MM-dd HH-mm-ss"), "yyyy-MM-dd HH-mm-ss"));
+			// Define o ID do usuário que fez a atualização, obtido do usuário atualmente logado
+			marcacao.setUserUpdate(Core.getCurrentUser().getId());
+
+			// Persiste o objeto marcacao na sessão do Hibernate
+			session.persist(marcacao);
+
+			// 2º Forma de pegar os checkout visto
+			/*List<String> NotCheckout = checkBoxHelper.getUncheckedIds(); // Pegar o checkout que não foi checado
+			// Verifica se existem IDs checados e se a lista não está vazia
+			if (checkBoxHelper.getChekedIds() != null && !checkBoxHelper.getChekedIds().isEmpty()) {
+				// Itera sobre cada ID checado
+				for (String checkedId : checkBoxHelper.getChekedIds()) {
+					// Cria uma nova instância de CmTMarcacao
+					CmTMarcacao marcacao = new CmTMarcacao();
+					// Define o ID do agendamento convertendo o ID checado de String para Integer
+					marcacao.setAgedamentoId(Integer.valueOf(id));
+					// Define a data de registro convertendo a data atual para o formato LocalDateTime
+					marcacao.setDataRegistro(Core.convertStringToLocalDateTime(Core.getCurrentDate("yyyy-MM-dd HH-mm-ss"), "yyyy-MM-dd HH-mm-ss"));
+					// Define o ID do usuário que fez a atualização, obtido do usuário atualmente logado
+					marcacao.setUserUpdate(Core.getCurrentUser().getId());
+					// Define o número do processo usando o ID da instância do processo da tarefa
+					marcacao.setNrProcesso(Core.toInt(task.getProcessInstanceId()));
+					// Persiste o objeto marcacao na sessão do Hibernate
+					session.persist(marcacao);
+
+				}
+			}*/
+
 			ApiPedido apiPedido = new ApiPedido();
 
 			// Define o número do processo do pedido convertendo o ID da instância do processo da tarefa em um inteiro
@@ -75,32 +114,6 @@ public class Taskagendamento_consulta_idController extends BPMNTaskController {
 			// Salva o objeto ApiPedido na sessão do Hibernate
 			apiPedido.save(session);
 
-
-			// Extrai um objeto CheckBoxHelper usando arrays de parâmetros
-			CheckBoxHelper checkBoxHelper = Core.extractCheckBox(Core.getParamArray("p_selecionar_fk"), Core.getParamArray("p_selecionar_check_fk"));
-
-			/*List<String> ViewCheckout = checkBoxHelper.getChekedIds(); // Pegar o checkout que foi checado
-			List<String> NotCheckout = checkBoxHelper.getUncheckedIds(); // Pegar o checkout que não foi checado*/
-
-			// Verifica se existem IDs checados e se a lista não está vazia
-			if (checkBoxHelper.getChekedIds() != null && !checkBoxHelper.getChekedIds().isEmpty()) {
-				// Itera sobre cada ID checado
-				for (String checkedId : checkBoxHelper.getChekedIds()) {
-
-					// Cria uma nova instância de CmTMarcacao
-					CmTMarcacao marcacao = new CmTMarcacao();
-					// Define o ID do agendamento convertendo o ID checado de String para Integer
-					marcacao.setAgedamentoId(Integer.valueOf(checkedId));
-					// Define a data de registro convertendo a data atual para o formato LocalDateTime
-					marcacao.setDataRegistro(Core.convertStringToLocalDateTime(Core.getCurrentDate("yyyy-MM-dd HH-mm-ss"), "yyyy-MM-dd HH-mm-ss"));
-					// Define o ID do usuário que fez a atualização, obtido do usuário atualmente logado
-					marcacao.setUserUpdate(Core.getCurrentUser().getId());
-					// Define o número do processo usando o ID da instância do processo da tarefa
-					marcacao.setNrProcesso(Core.toInt(task.getProcessInstanceId()));
-					// Persiste o objeto marcacao na sessão do Hibernate
-					session.persist(marcacao);
-				}
-			}
 
 		} catch (Exception e){
 			if(transaction != null)

@@ -72,7 +72,7 @@ public class ResourceServiceRest extends GenericActivitiRest{
             if (response.getStatus() == 200) {
                 try {
                     contentResp = FileHelper.convertToString((InputStream) response.getEntity());
-                    contentResp = IgrpHelper.convertToJsonString((InputStream) response.getEntity());
+                   /* contentResp = IgrpHelper.convertToJsonString((InputStream) response.getEntity());*/
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
