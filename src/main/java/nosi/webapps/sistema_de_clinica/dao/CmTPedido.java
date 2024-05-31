@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.ForeignKey;
 import java.io.Serial;
+import java.util.Date;
+
 import jakarta.validation.constraints.NotNull;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -47,7 +49,7 @@ public class CmTPedido extends BaseActiveRecord<CmTPedido> {
 	@Column(name = "processo_key")
 	private String processoKey;
 	@Column(name = "data_pedido")
-	private LocalDateTime dataPedido;
+	private Date dataPedido;
 	@Column(name = "user_pedido")
 	private String userPedido;
 
@@ -63,6 +65,10 @@ public class CmTPedido extends BaseActiveRecord<CmTPedido> {
 	private String obsAtendedor;
 	@Column(name = "obs_medico")
 	private String obsMedico;
+    @Column(name = "id_relacao")
+    private String idRelacao;
+    @Column(name = "tipo_relacao")
+    private String tipoRelacao;
 
    public Integer getId() {
       return this.id;
@@ -104,11 +110,11 @@ public class CmTPedido extends BaseActiveRecord<CmTPedido> {
       this.processoKey = processoKey;
    }
 
-   public LocalDateTime getDataPedido() {
+   public Date getDataPedido() {
       return this.dataPedido;
    }
 
-   public void setDataPedido(LocalDateTime dataPedido) {
+   public void setDataPedido(Date dataPedido) {
       this.dataPedido = dataPedido;
    }
 
@@ -168,7 +174,23 @@ public class CmTPedido extends BaseActiveRecord<CmTPedido> {
       this.obsMedico = obsMedico;
    }
 
-   public static final class Field {
+    public String getIdRelacao() {
+        return idRelacao;
+    }
+
+    public void setIdRelacao(String idRelacao) {
+        this.idRelacao = idRelacao;
+    }
+
+    public String getTipoRelacao() {
+        return tipoRelacao;
+    }
+
+    public void setTipoRelacao(String tipoRelacao) {
+        this.tipoRelacao = tipoRelacao;
+    }
+
+    public static final class Field {
       public static final String ID = "id";
       public static final String NR_PROCESSO = "nrProcesso";
       public static final String ETAPA_ATUAL = "etapaAtual";
@@ -182,6 +204,8 @@ public class CmTPedido extends BaseActiveRecord<CmTPedido> {
       public static final String PARACER_ATENDEDOR = "paracerAtendedor";
       public static final String OBS_ATENDEDOR = "obsAtendedor";
       public static final String OBS_MEDICO = "obsMedico";
+        public static final String TIPO_RELACAO = "tipoRelacao";
+        public static final String ID_RELACAO = "idRelacao";
 
 	  private Field() {}
 	}

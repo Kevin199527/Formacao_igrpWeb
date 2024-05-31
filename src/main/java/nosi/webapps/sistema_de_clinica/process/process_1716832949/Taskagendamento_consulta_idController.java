@@ -52,13 +52,15 @@ public class Taskagendamento_consulta_idController extends BPMNTaskController {
 		Agendar_consulta model = new Agendar_consulta();
 		model.load();
 
+		ApiPedido apiPedido = new ApiPedido();
+
 		TaskService task = RuntimeTask.getRuntimeTask().getTask();
 
 		Session session = null;
 		Transaction transaction = null;
 
 		try{
-			session = Core.getSession(Core.defaultConnection());
+			session = Core.getSession("sistema_de_clinica_postgresql_1");
 			transaction = session.beginTransaction();
 
 			// Extrai um objeto CheckBoxHelper usando arrays de parâmetros
@@ -77,6 +79,8 @@ public class Taskagendamento_consulta_idController extends BPMNTaskController {
 
 			// Persiste o objeto marcacao na sessão do Hibernate
 			session.persist(marcacao);
+
+			Core.setMessageInfo("marcacao ...."+marcacao.getId());
 
 			// 2º Forma de pegar os checkout visto
 			/*List<String> NotCheckout = checkBoxHelper.getUncheckedIds(); // Pegar o checkout que não foi checado
@@ -100,7 +104,6 @@ public class Taskagendamento_consulta_idController extends BPMNTaskController {
 				}
 			}*/
 
-			ApiPedido apiPedido = new ApiPedido();
 
 			// Define o número do processo do pedido convertendo o ID da instância do processo da tarefa em um inteiro
 			apiPedido.setNrProcesso(Core.toInt(task.getProcessInstanceId()));
@@ -111,11 +114,17 @@ public class Taskagendamento_consulta_idController extends BPMNTaskController {
 			apiPedido.setProcessoKey(task.getProcessDefinitionId());
 			// Define a etapa atual do pedido usando a chave da definição da tarefa
 			apiPedido.setEtapaAtual(task.getTaskDefinitionKey());
+
+			apiPedido.setTipoRelacao("MARCACAO");
+
+			apiPedido.setIdRelacao(""+marcacao.getId());
 			// Salva o objeto ApiPedido na sessão do Hibernate
 			apiPedido.save(session);
 
 
 		} catch (Exception e){
+			e.printStackTrace();
+			Core.setMessageError(""+e.getMessage());
 			if(transaction != null)
 				transaction.rollback();
 			return this.forward("Formacao_igrpWeb", "Taskagendamento_consulta_id", "index");

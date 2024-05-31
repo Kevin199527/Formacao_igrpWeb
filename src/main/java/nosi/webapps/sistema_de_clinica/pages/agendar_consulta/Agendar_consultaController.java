@@ -59,7 +59,7 @@ public class Agendar_consultaController extends Controller {
 		if(cmTEspecialMedicoList != null && !cmTEspecialMedicoList.isEmpty())
 			// Para cada especialidade médica encontrada, coloca o ID do médico e o nome do médico no mapa
 			cmTEspecialMedicoList.forEach(d -> {
-				_map.put(d.getMedicoId().getId(), d.getMedicoId().getNome());
+				_map.put(d.getId(), d.getMedicoId().getNome());
 			});
 
 		// Gera um XML para um combobox remoto utilizando o mapa de médicos e especialidades
@@ -86,11 +86,11 @@ public class Agendar_consultaController extends Controller {
 						Core.getParamInt(view.medico_com_especialidade.getParamTag()))
 				.all();
 
+		//System.out.println(Core.getParamInt(view.medico_com_especialidade.getParamTag()));
 		// Cria uma lista para armazenar os dados formatados para exibição na view
 		List<Agendar_consulta.Lista_de_consulta> tableList = new ArrayList<>();
-
 		// Verifica se a lista de agendamentos não é nula e não está vazia
-		if (agendamentoList != null && !agendamentoList.isEmpty()) {
+		if (!agendamentoList.isEmpty()) {
 			// Itera sobre cada agendamento encontrado
 			agendamentoList.forEach(d -> {
 				// Cria uma nova linha para a lista de consultas

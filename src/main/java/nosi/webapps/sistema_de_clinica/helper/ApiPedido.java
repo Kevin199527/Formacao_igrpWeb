@@ -14,6 +14,8 @@ public class ApiPedido {
     private String processoKey;
     private String processoDesc;
     private String userPedido;
+    private String idRelacao;
+    private String tipoRelacao;
 
     public String getEtapaAtual() {
         return etapaAtual;
@@ -72,6 +74,22 @@ public class ApiPedido {
         this.userPedido = userPedido;
     }
 
+    public String getIdRelacao() {
+        return idRelacao;
+    }
+
+    public void setIdRelacao(String idRelacao) {
+        this.idRelacao = idRelacao;
+    }
+
+    public String getTipoRelacao() {
+        return tipoRelacao;
+    }
+
+    public void setTipoRelacao(String tipoRelacao) {
+        this.tipoRelacao = tipoRelacao;
+    }
+
     public void update(Session session){
         CmTPedido _ped = new CmTPedido().find().keepConnection()
                 .andWhere("nrProcesso", "=", this.nrProcesso)
@@ -91,13 +109,14 @@ public class ApiPedido {
 
         // Define os valores dos campos do objeto _ped com os valores atuais do objeto corrente (this)
         _ped.setEtapaAtual(this.etapaAtual); // Define a etapa atual do pedido
-        _ped.setDataPedido(_ped.getDataPedido()); // Mantém a data do pedido do próprio objeto _ped
+        _ped.setDataPedido(this.dataPedido); // Mantém a data do pedido do próprio objeto _ped
         _ped.setEstadoPedido(this.estadoPedido); // Define o estado atual do pedido
         _ped.setNrProcesso(this.nrProcesso); // Define o número do processo do pedido
         _ped.setProcessoKey(this.processoKey); // Define a chave do processo do pedido
         _ped.setProcessoDesc(this.processoDesc); // Define a descrição do processo do pedido
         _ped.setUserPedido(this.userPedido); // Define o usuário que fez o pedido
-
+        _ped.setIdRelacao(this.idRelacao);
+        _ped.setTipoRelacao(this.tipoRelacao);
         // Persiste o objeto _ped na sessão do Hibernate
         session.persist(_ped);
     }
